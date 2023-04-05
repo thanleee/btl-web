@@ -234,12 +234,37 @@ header{
     background-color: #f8f8f8;
     top: 100%;
     margin-left: -50px;
-   
-    padding: 20px 15px 15px 15px;
+   padding: 20px 15px 15px 15px;
     z-index: 1;
    overflow: auto;
    
 }
+
+li.menu-bar1:nth-of-type(2) .menu1 {
+    margin-left: -120px;
+  }
+  li.menu-bar1:nth-of-type(3) .menu1 {
+    margin-left: -230px;
+  }
+li.menu-bar1:nth-of-type(4) .menu1 {
+    margin-left: -400px;
+  }
+  li.menu-bar1:nth-of-type(5) .menu1 {
+    margin-left: -455px;
+  }
+  li.menu-bar1:nth-of-type(6) .menu1 {
+    margin-left: -520px;
+  }
+  li.menu-bar1:nth-of-type(7) .menu1 {
+    margin-left: -650px;
+  }
+  li.menu-bar1:nth-of-type(8) .menu1 {
+    margin-left: -800px;
+  }
+  li.menu-bar1:nth-of-type(9) .menu1 {
+    margin-left: -900px;
+  }
+
 .sub-menu > ul{
     list-style-type: none;
     margin-top: 18px;
