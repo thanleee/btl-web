@@ -52,7 +52,7 @@ header .adv a:hover{
     text-decoration: underline;
 }
 header{
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-sticky; /*Safari*/
     position: sticky;
     z-index: 3;
     top: 0;
@@ -93,7 +93,7 @@ header{
    list-style: none;
    display: inline-flex;
    position: relative;
-   font-size: 21px;
+   font-size: 18px;
    font-family: Arial, Helvetica, sans-serif;
    float: left;
    height: 54px;
@@ -106,17 +106,30 @@ header{
     color: #141212;
     
 }
-.nav p{
+.nav li div p{
     width: 114px;
-    text-align: center;
+   text-align: center;
     
    display: flex;
    justify-content: center;
     flex-direction: column;
 }
-.nav .listt :hover{
+.nav .list1{
+    font-weight: 600;
+    border-bottom: 1px solid black;
+ 
+}
+.nav .list1 div{
+    display: flex;
+    align-items: center;
+    height: 51px;
+    border-bottom: 1px solid #0a0a0a;
+}
+  
+.nav .list2 :hover{
   font-weight: 600;
 }
+
 
 .row1 .search1 input{
     width: 100%;
@@ -171,6 +184,7 @@ header{
 .row1 .user a{
     color: #141212;
     text-decoration: none;
+    
    
 }
 .row1 .user li :hover{
@@ -188,6 +202,8 @@ header{
     justify-content: space-evenly;
     align-items: center;
     position: relative;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 .menu .menu-bar{
     display: flex;
