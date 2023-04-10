@@ -377,26 +377,35 @@
     justify-content: center;
     height: 76px ;
     text-align: center;
+    margin: -5px;
 }
 .body__cart-box4__pay-bank-info{
-    width: 30px ; 
-    display: block;
-    height: 30px ;
+    width: 65px ; 
+    display: flex;
+    height: 35px ;
     margin-right:30px ;
+    align-items: center;
+    font-size: 1.4rem;
+}
+.body__cart-box4__pay-bank-info .box4-text {
+    display: block;
+    text-align: center;
 }
 .body__cart-box4__pay-bank-info-special{
     display: flex;
 
 }
 .box4__pay-bank__img{
-    height: 30px;
-    width: 20px ; 
+    height: 35px;
+    width: 60px ; 
+    background-repeat: no-repeat; 
+    background-size: contain;
 }
 .body__cart-box4__pay-bank-text{
     font-size: 1.2rem;
     font-weight: 400;
     /* display: block; */
-
+  
     
 }
 .body__cart-box4__pay-bank-text-2{
