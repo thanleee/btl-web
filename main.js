@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // const options = document.querySelectorAll('.slidebar-option')
 // const optionsDisplays = document.querySelectorAll('.option-display')
 // const girdProduct = document.querySelector('.container')
@@ -86,27 +86,26 @@ function slideOut() {
     box.style.display = "none";
     scrolll();
 }
-=======
 const options = document.querySelectorAll('.slidebar-option')
 const optionsDisplays = document.querySelectorAll('.option-display')
 const girdProduct = document.querySelector('.container')
 
 const changeGrid = (number) => {
     console.log('run')
-    if(Number.parseInt(number) === 3) {
-       girdProduct.classList.add('gird-3')
-       girdProduct.classList.remove('gird-4')
-    }else if(Number.parseInt(number) === 4){
+    if (Number.parseInt(number) === 3) {
+        girdProduct.classList.add('gird-3')
+        girdProduct.classList.remove('gird-4')
+    } else if (Number.parseInt(number) === 4) {
         girdProduct.classList.add('gird-4')
         girdProduct.classList.remove('gird-3')
     }
 }
 
-options.forEach((ele,index) => {
+options.forEach((ele, index) => {
     ele.addEventListener('click', () => {
-        if(ele.classList.contains('show')) {
+        if (ele.classList.contains('show')) {
             ele.classList.remove('show')
-        }else {
+        } else {
             ele.classList.add('show')
         }
     })
@@ -115,15 +114,15 @@ options.forEach((ele,index) => {
 
 optionsDisplays.forEach((ele, index) => {
     ele.addEventListener('click', () => {
-        if(!ele.classList.contains('active')) {
+        if (!ele.classList.contains('active')) {
             ele.classList.add('active')
-           if(index === 0) {
+            if (index === 0) {
                 optionsDisplays[1].classList.remove('active')
-           }else {
+            } else {
                 optionsDisplays[0].classList.remove('active')
-           }
-           changeGrid(ele.innerText)
+            }
+            changeGrid(ele.innerText)
         }
     })
 })
->>>>>>> 6cd0e1d83a4c684f041cbfd85dd4ee9ede2b8150
+
