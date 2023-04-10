@@ -22,8 +22,8 @@ header .adv p {
     position: relative;
     color: rgb(7, 7, 7);
     font-size: 13px;
-   padding: 5px 0px 14px 0px;
-   z-index: 2;
+   padding: 5px 0px 10px 0px;
+   z-index: 1;
 }
 .ani{
     width: 100%;
@@ -166,7 +166,7 @@ header.hidden{
     border: none;
     min-width: 24px;
     height: 52px;
-    padding: 0 10px;
+    padding: 0 8px;
     margin: 0 15px;
    font-size: 37px;
 }
@@ -359,12 +359,12 @@ li.menu-bar1:nth-of-type(4) .menu1 {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background-color: rgba(255, 255, 255,0.5);
+    background-color: rgba(255, 255, 255,0.8);
     top: 0;
     right: 0;
     left: 0;
     z-index: 2;
-    margin-top: 110.2px;
+    margin-top: 106.5px;
     display: none; 
    
 }
@@ -409,7 +409,7 @@ li.menu-bar1:nth-of-type(4) .menu1 {
     width: 156px;
     border: 1px solid #ddd;
     border-top: none;
-    border-left: none;
+    border-right: none;
     font-size: 16px;
     letter-spacing: 1.6px;
     background-color: #f8f8f8;
@@ -433,7 +433,7 @@ li.menu-bar1:nth-of-type(4) .menu1 {
     display: flex;
     align-items: center;
     padding: 18px 20px;
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     font-size: 14px;
 }
 .menubartab div:nth-child(2){
