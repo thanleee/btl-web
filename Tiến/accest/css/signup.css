@@ -1,4 +1,21 @@
+
+
+
+* {
+    box-sizing : inherit ; 
+}
+/* 62.5% <--> 1rem = 10px 
+    100%$ <--> 1rem = 16px 
+*/
+html {
+    font-size: 62.5% ; 
+    line-height: 1.6rem ;
+    font-family : 'Roboto', sans-serif ; 
+    box-sizing : border-box ; 
+}
+
 .container{
+    margin-top: 148px;
     width : 100% ; 
     display: flex;
     justify-content: center;
@@ -69,7 +86,7 @@
 }
 .signup__connect-text2--link{
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: 700;
     color:#333 ; 
 
 }
@@ -102,7 +119,7 @@
 }
 .input__text{
     width: 346px ; 
-    height: 31px ;
+    height: 40px ;
     margin: 15px 0 15px 0 ;
     border: 1px solid #ddd ; 
     outline: none;
@@ -121,6 +138,10 @@
     border: 1px solid #333; 
     cursor: pointer;
 
+}
+.chekbox{
+    font-size: 1.2rem;
+    margin: 1px 5px 0 0 ; 
 }
 .text-1{
     font-size: 1.2rem;
@@ -146,7 +167,7 @@
 }
 .input{
     width: 290px ; 
-    height: 31px ;
+    height: 40px ;
     border: 1px solid #ddd ; 
     outline: none;
 }
@@ -156,7 +177,7 @@
 .input-a{
     border:1px solid #ddd ;
     border-left: none;
-    height: 31px ;
+    height: 40px ;
     width:56px ; 
     display: flex;
     justify-content: center;
@@ -167,7 +188,7 @@
 .show{
     color: #333 ;
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: 700;
 }
 
   
@@ -203,7 +224,7 @@
     background-color: #000000;
     color : #fff ; 
     width: 346px ; 
-    height: 31px ; 
+    height: 40px ; 
     margin-top: 10px ; 
     font-size: 1.8rem;
     font-weight: 300;
