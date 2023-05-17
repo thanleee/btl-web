@@ -55,8 +55,8 @@ body{
     display: none;
 }
 .container{
-    border-top: 1px solid #ddd;
-    border-left: 1px solid #ddd;
+    /* border-top: 1px solid #ddd; */
+    /* border-left: 1px solid #ddd; */
 }
 .container-nav{
     width: 100%;
@@ -67,7 +67,7 @@ body{
     height: 42px;
 }
 .container-nav .option-display{
-    height: 42px;
+    /* height: 42px; */
     padding: 10px;
     font-size: 1.3rem;
     background: #f8f8f8;
@@ -183,7 +183,7 @@ body{
     flex-basis: calc(100%/3);
 }
 .product{
-    border: 4px solid #efeeef;
+    border: 1px solid #efeeef;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -275,7 +275,7 @@ body{
 
 #table1 {
     width: 100%;
-    height: 250px;
+    height: 130px;
     border-collapse: collapse;
     table-layout: fixed;
   }
@@ -308,51 +308,27 @@ body{
     font-size: 12px;
     line-height: 1.5;
   }
-  .col1 {
-    width: 40%;
-  }
-  .col2 {
-    width: 20%;
-  }
-  .col3 {
-    width: 40%;
-  }
-  .col1 div, .col2 div {
-    margin-left: 10%;
-    width: 80%;
-    height: 200px;
-    padding: 10px;
-    background-color: #F8F8F8;
-    text-align: left;
-    font-size: 14px; 
-    
-  }
-  .col1 div {
-    line-height: 1.5;
-  }
-  .col2 div {
-    line-height: 2;
-  }
-  .col31 {
-      width: 200px;
-      height: 200px;
-      padding: 10px;
-      background-color: #F8F8F8;
-      text-align: left;
-      font-size: 14px;
-      float: left;
-      line-height: 2;
-  }
-  .col32 {
-    margin-left: 20%;
-    width: 140px;
-    height: 60px;
+
+.col1 {
+    width: 50%;
+    height: 100px;
     padding: 10px;
     background-color: #F8F8F8;
     text-align: left;
     font-size: 14px;
-    float: right;
-  }
+    float: left;
+    padding-left: 5%;
+}
+.col2 {
+  margin-left: 20%;
+  width: 200px;
+  height: 60px;
+  padding: 10px;
+  background-color: #F8F8F8;
+  text-align: left;
+  font-size: 14px;
+  float: right;
+}
   a {
     text-decoration: none;
     color: black;

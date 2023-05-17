@@ -15,7 +15,7 @@ body{
 }
 
 header .adv {
-    background: #f5a6ac;
+    background:#2f2f2f;
     text-align: center;
     height: auto;
     width: 100%;
@@ -24,7 +24,7 @@ header .adv {
 header .adv p {
     display: block;
     position: relative;
-    color: rgb(7, 7, 7);
+    color: white;
     font-size: 13px;
    padding: 2px 0px 10px 0px;
    z-index: 1;
@@ -41,7 +41,7 @@ header .adv p {
 
 header .adv .ani a{
     position: relative;
-    color: rgb(7, 8, 8);
+    color: white;
     font-size: 12px;
     
 }
@@ -54,7 +54,7 @@ header .adv a:hover{
 }
 #policy{
     display: inline-block;
-    color: rgb(4, 4, 4);
+    color: white;
     font-size: 13px;
     text-decoration: underline;
 }
@@ -207,10 +207,10 @@ header.hidden{
    
 }
 .user li:nth-child(2) {
-    margin-top: 3px;
+    margin-top: 5px;
   }
 .user li:nth-child(3) {
-    margin-top: 2px;
+    margin-top: 4px;
    
   }
 .row1 .user li>a:hover{
@@ -601,7 +601,7 @@ li.menu-bar1:nth-of-type(4) .menu1 {
     right: 0;
     left: 0;
     z-index: 2;
-    margin-top: 109px;
+    margin-top: 118px;
     display: none;
     font-size: 62.5%;
     line-height: 1.6rem;
@@ -761,7 +761,7 @@ li.menu-bar1:nth-of-type(4) .menu1 {
     right: 0;
     left: 0;
     z-index: 2;
-    margin-top: 109px;
+    margin-top: 118px;
     display: none;
     font-size: 62.5%;
     line-height: 1.6rem;
@@ -1073,20 +1073,20 @@ li.menu-bar1:nth-of-type(4) .menu1 {
     }
     .user > li .containcart{
         display: none;
-        margin-top: 100px;
+        margin-top: 109px;
         border-top: 1px solid #ddd;
     }
     /* ------section------- */
     section{
         position: relative;
-        top: -41px;
+        top: -45.5px;
     }
     
 }
 /*---------------section--------------*/
 section{
     
-   
+   margin-top: -37px;
 }
 
 /* -------footer -------*/

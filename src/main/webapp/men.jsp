@@ -1,26 +1,26 @@
+<%@page import="model.User"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOOHOO | Woments and Mens</title>
+    <title>Don's Miss Out</title>
 
-    <link rel="icon" href="img/logoboohoo.png">
-    <link rel="stylesheet" href="css/style-head-women.css">
+    <link rel="icon" href="./accest/img/logoboohoo.png">
+    <link rel="stylesheet" href="./accest/css/style-header-men.css">
     <script src="https://kit.fontawesome.com/9d9613e72c.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="./css/cart.css">
-    
+    <link rel="stylesheet" href="./accest/css/style_men.css">
 </head>
 
 <body>
-
     <header>
         <div class="row">
             <div class="adv">
@@ -52,8 +52,8 @@
                     <div class="bartab">
                         <div id="bartab-content" class="bartab-content">
                             <div class="bartab-list">
-                                <button id="women"><a href="./women.html">WOMENS</a></button>
-                                <button id="men"><a href="./men.html">MENS</a></button>
+                                <button id="women"><a href="#">WOMENS</a></button>
+                                <button id="men"><a href="#">MENS</a></button>
                             </div>
                             <div class="menubartab">
                                 <div class="img-menu">50% OFF + FREE SHIPPING!</div>
@@ -169,17 +169,17 @@
                     <ul class="nav">
                         <li>
                             <div class="logo">
-                                <a href="#"><img src="img/boohoo_logo_black.png" alt=""></a>
-                            </div>
-                        </li>
-                        <li class="list1">
-                            <div>
-                                <p><a href="#">WOMENS</a> </p>
+                                <a href="#"><img src="./accest/img/boohoo_logo_black.png" alt=""></a>
                             </div>
                         </li>
                         <li class="list2">
                             <div>
-                                <p><a href="header-men.html">MENS</a></p>
+                                <p><a href="women.jsp">WOMENS</a> </p>
+                            </div>
+                        </li>
+                        <li class="list1">
+                            <div>
+                                <p><a href="men.jsp">MENS</a></p>
                             </div>
                         </li>
                     </ul>
@@ -196,6 +196,7 @@
                     <li> <a id="login-singup" class="fa-regular fa-user" href="#"></a>
                         <div id="containerlogin" class="containerlogin">
                             <div class="container-log">
+                                <form action="login" method="post">
                                 <div class="content hop1">
                                     <div class="header">
                                         <span class="text1">LOGIN</span>
@@ -205,15 +206,14 @@
 
                                     </div>
                                     <div class="body body-email">
-                                        <label for="email" class="text">Email</label>
-                                        <input id="email" type="text" class="input input__email"
-                                            placeholder="Nhập email của bạn">
+                                        <span class="text">Email</span>
+                                     
+                                        <input type="text" name="email" class="input input__email" placeholder="Nhập email của bạn">
                                     </div>
                                     <div class="body body-mk">
-                                        <label for="pass" class="text">Password</label>
+                                        <span class="text">Password</span>
                                         <div class="pw">
-                                            <input id="pass" type="password" class="input input__password"
-                                                placeholder="Nhập mật khẩu của bạn">
+                                            <input type="password" name="password" class="input input__password" placeholder="Nhập mật khẩu của bạn">
                                             <div class="input__password-show">
                                                 <a href="" class="input-show show">Show</a>
                                             </div>
@@ -228,14 +228,15 @@
                                         <span class="save-password__text">Remember me</span>
                                     </div>
                                     <div class="click-login">
-                                        <button class=" click-login__login">LOG IN</button>
+                                        <button type="submit" class=" click-login__login">LOG IN</button>
                                         <a href="" class="click-login__forget">Forgot Password?</a>
                                     </div>
 
                                 </div>
+                                </form>
                                 <div class="content hop2">
 
-                                    <button class=" click-login__login"><a href="#">REGISTER</a></button>
+                                    <button class=" click-login__login"><a href="./sign-up_header-women.html">REGISTER</a></button>
                                 </div>
                                 <div class="img-log"
                                     style="background-image: url(https://media.boohoo.com/i/boohooamplience/375x88_BANNER_NEWIN_2);">
@@ -243,6 +244,16 @@
                             </div>
                         </div>
                     </li>
+                    <li>
+             			<a style="font-size:1.8rem ; margin-top:5px" href="#">
+             			 Hello, <% 
+             			 User u = (User) session.getAttribute("fname") ; 
+             			 if(u != null ) {
+             				 out.print(u.getFname()) ; 
+             			 } ; 
+             			 %>
+             			</a>
+             		</li>
                     <li> <a href="#"><span class="material-symbols-outlined">
                                 favorite
                             </span></a></li>
@@ -321,7 +332,7 @@
                                         <span class="viewcart__text">*Plus applicable taxes</span>
                                         <div class="btn__viewcart flex ">
                                             <div class="btn__1">
-                                                <button class="btn btn--1">VIEW CART</button>
+                                                <button class="btn btn--1"><a href="./cart_header-women.html">VIEW CART</a></button>
                                             </div>
                                             <div class="btn__2">
                                                 <button class="btn btn--2">CHECKOUT</button>
@@ -336,7 +347,14 @@
                             </div>
                         </div>
                     </li>
-
+					    <li> <a href="dangxuat" style="font-size:1.8rem">
+                     <% 
+             	
+             			 if(u != null ) {
+             				 out.print("Đăng xuất") ; 
+             			 } ; 
+             			 %>
+                    </a></li>
 
                 </div>
             </div>
@@ -849,301 +867,769 @@
 
 
     </header>
+    <hr style="border: 1px solid #ddd;">
+    <br><br><br><br><br><br><br><br>
 
-    
-    <!-- <hr style="border: 1px solid #ddd;">
-    <section>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </section> -->
 
-    <body>
-        <div class="container">
-            <div class="cart">
-                <div class="header__cart">
-                    <div class="header__cart-count">CART(1)</div>
-                    <div class="header__cart-discount">Bạn tiết kiệm 12$ cho đơn hàng này </div>
-                   <a href="" class="header__cart-checkout">
-                    <button class="header__cart-checkout-btn">
-                        <span class="header__cart-checkout-btn-text">CHECKOUT</span>
-                    </button>
-                   </a>
+    <table id="table1">
+        <tr>
+            <td>
+                <div class="col1">
+                    <br>
+                    <p style="font-size:large;"><B>DON'T MISS OUT</B></p>
+                </div>
+                <div class="col2">
+                    <a href="#">ENERY-SAVING MODE</a><br><br>
+                    <a href="#">WHAT'S THIS?</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="main">
+        <aside class="slidebar">
+            <div>
+                <div class="slidebar-refine">REFINE BY</div>
+                <div class="slidebar-option" data-option="0">
+                    <div>
+                        <span>US SIZE </span>
+                        <div class="container-fillter">
+                            <ul class="product-fillter">
+                                <li>7</li>
+                                <li>8</li>
+                                <li>9</li>
+                                <li>10</li>
+                                <li>11</li>
+                                <li>12</li>
+                                <li>13</li>
+                                <li>28</li>
+                                <li>30</li>
+                                <li>32</li>
+                                <li>34</li>
+                                <li>36</li>
+                                <li>38</li>
+                                <li>40</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="slidebar-option">
+                    <div>
+                        <span>COLOR</span>
+                        <div>
+                            <div class="container-fillter">
+                                <ul class="product-fillter">
+                                    <li>Gray</li>
+                                    <li>Khaki</li>
+                                    <li>Metallics</li>
+                                    <li>Multi</li>
+                                    <li>Navy</li>
+                                    <li>Neon</li>
+                                    <li>Nude</li>
+                                    <li>Orange</li>
+                                    <li>Pink</li>
+                                    <li>Purple</li>
+                                    <li>Red</li>
+                                    <li>Silver</li>
+                                    <li>White</li>
+                                    <li>Yellow</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slidebar-option">
+                    <div>
+                        <span>SHOP BY FIT</span>
+                        <div>
+                            <div class="container-fillter">
+                                <ul class="product-fillter">
+                                    <li class="flex-12">Boohoo Plus & Curve Clothing</li>
+                                    <li class="flex-12">Boohoo Tall</li>
+                                    <li class="flex-12">Main Collection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slidebar-option">
+                    <div>
+                        <span>CATEGORY</span>
+                        <div>
+                            <div class="container-fillter">
+                                <ul class="product-fillter">
+                                    <li>Accessories</li>
+                                    <li>Coats & jackets</li>
+                                    <li>Denim</li>
+                                    <li>Gifts & Novelty</li>
+                                    <li>Grooming</li>
+                                    <li>Jeans</li>
+                                    <li>Jewelry & Watches</li>
+                                    <li>Loungewear</li>
+                                    <li>Watching Sets</li>
+                                    <li>Pants</li>
+                                    <li>Shoes and Boots</li>
+                                    <li>Shorts</li>
+                                    <li>Suits</li>
+                                    <li>Sweater & Cardigans</li>
+                                    <li>Swimweat</li>
+                                    <li>Tops</li>
+                                    <li>Tracksuits</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="slidebar-option">
+                    <div>
+                        <span>STYLE</span>
+                        <div>
+                            <div class="container-fillter">
+                                <ul class="product-fillter">
+                                    <li class="flex-12">2-in-1 Shorts</li>
+                                    <li class="flex-12">Aviator Jackets</li>
+                                    <li class="flex-12">Aviator Sungglasses</li>
+                                    <li class="flex-12">Bags & Rucksacks</li>
+                                    <li class="flex-12">Basic Shorts</li>
+                                    <li class="flex-12">Basic Sweatpants</li>
+                                    <li class="flex-12">Basic Sweatershirts</li>
+                                    <li class="flex-12">Basic T-shirts</li>
+                                    <li class="flex-12">Basic vests</li>
+                                    <li class="flex-12">Beanies</li>
+                                    <li class="flex-12">Belts</li>
+                                    <li class="flex-12">Biker Jeans</li>
+                                    <li class="flex-12">Blazers</li>
+                                    <li class="flex-12">Bomber Jackets</li>
+                                    <li class="flex-12">Bomber Tracksuits</li>
+                                    <li class="flex-12">Boots</li>
+                                    <li class="flex-12">Borgs Jackets</li>
+                                    <li class="flex-12">Boxers</li>
+                                    <li class="flex-12">Bracelets</li>
+                                    <li class="flex-12">Briefs & Thongs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slidebar-option">
+                    <div>
+                        <span>OCCASION</span>
+                        <div>
+                            <div class="container-fillter">
+                                <ul class="product-fillter">
+                                    <li>Activewear</li>
+                                    <li>Beachwear</li>
+                                    <li>Casual</li>
+                                    <li>Going out</li>
+                                    <li>Lougnewear</li>
+                                    <li>Novelty</li>
+                                    <li>Occasion</li>
+                                    <li>Smart</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slidebar-option">
+                    <div>
+                        <span>PRICE</span>
+                        <div>
+                            <div class="container-fillter">
+                                <ul class="product-fillter">
+                                    <li class="flex-12">$0 - $10</li>
+                                    <li class="flex-12">$10 - $20</li>
+                                    <li class="flex-12">$20 - $30</li>
+                                    <li class="flex-12">$30 - $50</li>
+                                    <li class="flex-12">$50 - $100</li>
+                                    <li class="flex-12">$100 - $500</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slidebar-option">
+                    <div>
+                        <span>BRANDS</span>
+                        <div>
+                            <div class="container-fillter">
+                                <ul class="product-fillter">
+                                    <li class="flex-12">boohooMan</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="cart__titile">Hãy nhanh tay đặt hàng</div>
-            <div class="cart">
-                <div class="body__cart">
-                  <div class="body__cart--1">
-                    <div class="body__cart-box1">
-                        <div class="body__cart-box1-text">50% OFF</div>
-                        <div class="body__cart-box1-text">50% OFF EVERYTHING!*</div>
-                        <div class="body__cart-box1-pri">
-                            <div class="body__cart-box1-pri__image">
-                                <img src="https://media.boohoo.com/i/boohoo/bmm39043_taupe_xl?w=120&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit" alt="" class="box1__img">
-                            </div>
-                            <div class="body__cart-box1-pri__content">
-                                <div class="body__cart-box1-pri__content-name">
-                                    <div class="body__cart-box1-pri__content-text">
-                                        <a href="" class="body__cart-box1-pri__content-name__text">MAN ACTIVE COLOUR BLOCK PERFORMANCE VEST</a>
-                                    </div>
-                                    <div class="body__cart-box1-pri__content-delete">
-                                        <a href="" class="delete" alt="Remove">
-                                            X
-                                      
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="body__cart-box1-pri__content-source">
-                                    <span class="body__cart-box1-pri__content-source--text ">Shipped from the UK</span>
-                                </div>
-                                <div class="body__cart-box1-pri__content-info">
-                                    <div class="body__cart-box1-pri__content-info__size">
-                                        <div class="body__cart-box1-color"></div>
-                                        <div class="body__cart-box1-size">
-                                            M
-                                        </div>
-    
-                                    </div> 
-                                    <div class="body__cart-box1-pri__content-info__quantity">QTY: 1</div> 
-                                    <div class="body__cart-box1-pri__content-info__stock">In stock</div>
-                                </div>
-                                <div class="body__cart-box1-pri__content-final">
-                                    <div class="body__cart-box1-pri__content-final__edit">
-                                        <a href="" class="final__edit">Edit</a>
-                                    </div>
-                                    <div class="body__cart-box1-pri__content-final__price">
-                                        <span class="final__price-old">$24.00</span>
-                                        <span class="final__price-current">$12.00</span>
-                                    </div>
-                                </div>
-                            </div>
+        </aside>
+        <div class="container gird-4">
+            <div class="container-nav">
+                <div style="display: flex;">
+                    <div class="option-display active">4</div>
+                    <div class="option-display">3</div>
+                </div>
+                <div class="option-sort">Sort</div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img1.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Slub Dragon Printed Shirt
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$25.00</span>
+                            <span class="price-before-reduce">$50.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% OFF
                         </div>
                     </div>
-                    <div class="body__cart-box2">
-                        <div class="body__cart-box2__img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdNicDDVQ_TelRzqG1c28sPTmQvrV8aZkQVQWqPKH5QS7M6rrMKCL2guqBxhMqqQ0AjIc&usqp=CAU" alt="" class="box2__img">
-                        </div>
-                        <div class="body__cart-box2__img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZF8BqZhhhWgeFgIIbIqMPjnVaCPgbHIjnDsxhET2HoyrmNce3tOF8pSs60-clLlxFi4U&usqp=CAU" alt="" class="box2__img">
-    
-                        </div>
-                        <div class="body__cart-box2__img">
-                            <img src="https://www.artisantg.com/assets/icons/Secure_PMT_319x250.png" alt="" class="box2__img">
-    
-                        </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #dbe3ef;"></div>
                     </div>
-                  </div>
-                  <div class="body__cart--2">
-                      <div class="body__cart-box3">
-                        <div class="body__cart-box3__price">
-                            <div class="body__cart-box3__price-1 box3--row">
-                                <span class="body__cart-box3__price-1--text1">YOUR CART</span>
-                                <span class="body__cart-box3__price-1--text2">$24.00</span>
-                            </div>
-                            <div class="body__cart-box3__price-2 box3--row">
-                                <span class="body__cart-box3__price-2--text1">USA STANDARD SHIPPING</span>
-                                <span class="body__cart-box3__price-2--text2">$9.99</span>
-                            </div>
-                            <div class="body__cart-box3__price-2 box3--row">
-                                <span class="body__cart-box3__price-2--text1">SALES TAX</span>
-                                <span class="body__cart-box3__price-2--text2">TBD</span>
-                            </div>
-                            <div class="body__cart-box3__price-2 box3--row">
-                                <span class="body__cart-box3__price-2--text1">DISCOUNT</span>
-                                <span class="body__cart-box3__price-2--text2">-$12.00</span>
-                            </div>
-                            <div class="body__cart-box3__price-3 box3--row">
-                                <span class="body__cart-box3__price-3--text1">Discounts included</span>
-    
-                            </div>
-                            <div class="body__cart-box3__price-2 box3--row">
-                                <span class="body__cart-box3__price-2--text1">50% OFF EVERYTHiNG!*</span>
-                                <span class="body__cart-box3__price-2--text2">-$12.00</span>
-    
-                            </div>
-                        </div>
-                        <div class="body__cart-box3__pay">
-                            <div class="body__cart-box3__pay-price box3--row">
-                                <span class="body__cart-box3__pay-price-1">ORDER TOTAL</span>
-                                <span class="body__cart-box3__pay-price-2">$21.99</span>
-                            </div>
-                            <div class="body__cart-box3__pay-text1 box3--row">Thuế được giảm khi thanh toán</div>
-                            <a href="" class="body__cart-box3__pay-btn">
-                                <button class="body__cart-box3__pay-btn--1 btn-pri">CHECKOUT</button>
-                            </a>
-                            <div class="body__cart-box3__pay-text2  ">Hoặc, Thanh toán với</div>
-                            <a href="" class="body__cart-box3__pay-bank box3--row">
-                                <img src="https://cdn0.iconfinder.com/data/icons/shift-ecommerce/32/Paypal-512.png" alt="" class="pay-bank__img">
-                                <img src="https://icon-library.com/images/paypal-icon-vector/paypal-icon-vector-4.jpg" alt="" class="pay-bank__img">
-                            </a>
-                            <a href="" class="body__cart-box3__pay-express box3--row">
-                                <button class="body__cart-box3__pay-btn--2 btn-pri">
-                                    <span class="btn--2-text">
-                                        <span class="btn--2-text-1">Klarna.</span>
-                                         Thanh toán nhanh</span>
-                                </button>
-                            </a>
-                        </div>
-                      </div>
-                      <div class="body__cart-box4">
-                        <div class="body__cart-box4__pay-bank">
-                            <span class="body__cart-box4__pay-bank-info">
-                                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5jmUkWb_h4gTSWpAwPYmIpCe77uHc7pK2zup_0VSxtNA00Qn8XDLEDM8Vdy83mhOgvw&usqp=CAU" alt="" class="box4__pay-bank__img">
-                                 -->
-                                <div class="box4__pay-bank__img"  style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5jmUkWb_h4gTSWpAwPYmIpCe77uHc7pK2zup_0VSxtNA00Qn8XDLEDM8Vdy83mhOgvw&usqp=CAU); " ></div>
-                            </span>
-                            <span class="body__cart-box4__pay-bank-text">Pay $5.50 in 4 installments every 2 weeks</span>
-    
-                        </div>
-                        <div class="body__cart-box4__pay-bank">
-                            <span class="body__cart-box4__pay-bank-info">
-                                <img src="https://cdn0.iconfinder.com/data/icons/shift-ecommerce/32/Paypal-512.png" alt="" class="box4__pay-bank__img">
-                                <!-- <img src="https://icon-library.com/images/paypal-icon-vector/paypal-icon-vector-4.jpg" alt="" class="box4__pay-bank__img"> -->
-                            </span>
-                            <span class="body__cart-box4__pay-bank-text">Pay in 4 interest-free payments on eligible purchases. 
-                            <a href="" class="body__cart-box4__pay-bank-text-2">More info</a>
-    
-                            </span>
-                        </div>
-                        <div class="body__cart-box4__pay-bank">
-                            <span class="body__cart-box4__pay-bank-info box4-text">Klarna.</span>
-                            <span class="body__cart-box4__pay-bank-text">Pay In 30 days or $5.50 in 4 installments every 2 weeks </span>
-                        </div>
-                      </div>
-                  </div>
-                    
                 </div>
             </div>
-            <div class="cart__suggest">
-                <div class="cart__suggest-title">
-                    <span class="cart__suggest-title__1">WE THINK YOU'LL LOVE</span>
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img2.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
                 </div>
-                <div class="cart__suggest-product">
-                    <div class="cart__suggest-product__items">
-                        <div class="cart__suggest-product--img " style="background-image: url(https://media.boohoo.com/i/boohoo/gzz45238_cream_xl?w=450&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit);">
-                            <div class="cart__suggest-product__icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                            <button class="btn-product__img">Quick View</button>
-                            
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Mid Length Man Tape Swim Shorts
                         </div>
-                        <div class="cart__suggest-product--info">
-                            <a href="" class="cart__suggest-product--info-title">
-                                CREAM RETRO SUNGLASSES
-                            </a>
-                            <div class="cart__suggest-product--info-price">
-                                <span class="cart__suggest-product--info-price__current">$7.20 </span>
-                                
-                                <span class="cart__suggest-product--info-price__old">$12.00</span>
-                                <span class="i">|</span>
-                                <span class="cart__suggest-product--info-price__sale">40% OFF</span>
-                                <div class="cart__suggest-product--info-price__color-1">
-        
-                                </div>
-                            </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$16.00</span>
+                            <span class="price-before-reduce">$32.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% OFF
                         </div>
                     </div>
-                    <div class="cart__suggest-product__items">
-                        <div class="cart__suggest-product--img " style="background-image: url(https://media.boohoo.com/i/boohoo/fzz39702_chocolate_xl?w=380&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit);">
-                            <div class="cart__suggest-product__icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                            <button class="btn-product__img">Quick View</button>
-                        </div>
-                        <div class="cart__suggest-product--info">
-                            <a href="" class="cart__suggest-product--info-title">
-                                SQUARE CAT EYE SUNGLASSES
-                            </a>
-                            <div class="cart__suggest-product--info-price">
-                                <span class="cart__suggest-product--info-price__current">$9.00</span>
-                                
-                                <span class="cart__suggest-product--info-price__old">$18.00</span>
-                                <span class="i">|</span>
-                                <span class="cart__suggest-product--info-price__sale">50% OFF</span>
-                                <div class="cart__suggest-product--info-price__color-2">
-        
-                                </div>
-                            </div>
-                        </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #ef4e50;"></div>
                     </div>
-                    <div class="cart__suggest-product__items">
-                        <div class="cart__suggest-product--img " style="background-image: url(https://media.boohoo.com/i/boohoo/dzz32937_black_xl?w=380&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit);">
-                            <div class="cart__suggest-product__icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                            <button class="btn-product__img">Quick View</button>
-                            
-                        </div>
-                        <div class="cart__suggest-product--info">
-                            <a href="" class="cart__suggest-product--info-title">
-                                PU FANNY PACK
-                            </a>
-                            <div class="cart__suggest-product--info-price">
-                                <span class="cart__suggest-product--info-price__current">$10.00 </span>
-                                
-                                <span class="cart__suggest-product--info-price__old">$22.00</span>
-                                <span class="i">|</span>
-                                <span class="cart__suggest-product--info-price__sale">55% OFF</span>
-                                <div class="cart__suggest-product--info-price__color-3">
-        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart__suggest-product__items">
-                        <div class="cart__suggest-product--img " style="background-image: url(https://media.boohoo.com/i/boohoo/fzz39889_black_xl?w=380&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit);">
-                            <div class="cart__suggest-product__icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                            <button class="btn-product__img">Quick View</button>
-                            
-                        </div>
-                        <div class="cart__suggest-product--info">
-                            <a href="" class="cart__suggest-product--info-title">
-                                CHUNKY RECTANGLE OVERSIZED SUNGLASSES
-                            </a>
-                            <div class="cart__suggest-product--info-price">
-                                <span class="cart__suggest-product--info-price__current">$11.00 </span>
-                                
-                                <span class="cart__suggest-product--info-price__old">$22.00</span>
-                                <span class="i">|</span>
-                                <span class="cart__suggest-product--info-price__sale">50% OFF</span>
-                                <div class="cart__suggest-product--info-price__color-4">
-        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart__suggest-product__items">
-                        <div class="cart__suggest-product--img " style="background-image: url(https://media.boohoo.com/i/boohoo/fzz40159_silver_xl?w=380&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit);">
-                            <div class="cart__suggest-product__icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                            <button class="btn-product__img">Quick View</button>
-                            
-                        </div>
-                        <div class="cart__suggest-product--info">
-                            <a href="" class="cart__suggest-product--info-title">
-                                METALLIC CROC CURVED CHAIN CROSS BODY
-                            </a>
-                            <div class="cart__suggest-product--info-price">
-                                <span class="cart__suggest-product--info-price__current">$23.00 </span>
-                                
-                                <span class="cart__suggest-product--info-price__old">$45.00</span>
-                                <span class="i">|</span>
-                                <span class="cart__suggest-product--info-price__sale">49% OFF</span>
-                                <div class="cart__suggest-product--info-price__color-5">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-    
                 </div>
-               
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img3.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Oversized Skull Homme Graphic T-shirt
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$15.00</span>
+                            <span class="price-before-reduce">$30.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% OFF
+                        </div>
+                    </div>
+                    <div class="product-color">
+                        <div class="product-color">
+                            <div class="block-color" style="background: #e9eef8;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img4.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Piping Shirt And Swim Set
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$45.00</span>
+                            <span class="price-before-reduce">$90.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% off
+                        </div>
+                    </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #ee4c4d;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img5.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Oversized Official Butterfly Script T-shirt
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$15.00</span>
+                            <span class="price-before-reduce">$30.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% off
+                        </div>
+                    </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #e9e9e9;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img6.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Oversized Ocl Faux Layer T-shirt And Short Set
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$32.00</span>
+                            <span class="price-before-reduce">$64.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% off
+                        </div>
+                    </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #3e72e2;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img7.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Slim Fit Panelled Denim Shorts
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$25.00</span>
+                            <span class="price-before-reduce">$50.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% off
+                        </div>
+                    </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #f0e7e2;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img8.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Oversized Overdye Renaissance Graphic T-shirt
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$16.00</span>
+                            <span class="price-before-reduce">$32.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% off
+                        </div>
+                    </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #3e72e2;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img9.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Mesh Homme Basketball Vest
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$18.00</span>
+                            <span class="price-before-reduce">$36.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% off
+                        </div>
+                    </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #ff5b42;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img10.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Mid Basketball Limited Swim Shorts
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$20.00</span>
+                            <span class="price-before-reduce">$40.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% off
+                        </div>
+                    </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #f44234;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img11.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Mesh Homme And Star Print Basketball Vest
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$18.00</span>
+                            <span class="price-before-reduce">$36.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% off
+                        </div>
+                    </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #2c2930;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img12.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Mesh 00 Mid Length Basketball Short
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$25.00</span>
+                            <span class="price-before-reduce">$50.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% off
+                        </div>
+                    </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #171719;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img13.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Oversized Boxy Printed Overshirt
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$30.00</span>
+                            <span class="price-before-reduce">$60.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% off
+                        </div>
+                    </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #66d7b3;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img14.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Relaxed Limited Heavyweight Short
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$18.00</span>
+                            <span class="price-before-reduce">$36.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% off
+                        </div>
+                    </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #efeeef;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img15.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            4 Way Stretch Piping Printed Shirt And Short Set
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$50.00</span>
+                            <span class="price-before-reduce">$100.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% off
+                        </div>
+                    </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #04d5b4;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <a><img src="./accest/img/img16.webp" style="max-width: 100%;"></img></a>
+                    <a>
+                        <div class="quick-view">
+                            Quick view
+                        </div>
+                    </a>
+                    <div class="icon-heart">
+                        <img src="./accest/img//icon-heart.png" alt="save for later" title="save for later"
+                            style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <a>
+                        <div class="product-name">
+                            Man Embroidered T-shirt
+                        </div>
+                    </a>
+                    <div class="product-price">
+                        <div class="price">
+                            <span class="price-after-reduce">$12.00</span>
+                            <span class="price-before-reduce">$24.00</span>
+                        </div>
+                        <div class="precent-reduce">
+                            50% off
+                        </div>
+                    </div>
+                    <div class="product-color">
+                        <div class="block-color" style="background: #efeeef;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="load-more">
+                <div style="display: flex;align-items: center;flex-direction: column;flex-basis: 25%;">
+                    <p class="text-show">Showing <span>16</span> of <span>16</span> products</p>
+                    <a style="width: 100%;"><button class="btn-load-more">Load more</button></a>
+                </div>
             </div>
         </div>
-    </body>
-    
+    </div>
+
+    <table id="table2">
+        <td>
+            <p style="font-size: 18px;">DON'T MISS OUT</p>
+        </td>
+    </table>
+
+
+
 
     <footer>
 
@@ -1155,7 +1641,7 @@
             </a>
         </div>
         <div class="b-footer_top">
-            <img src="img/usa_payment_fooer_strip_mob_nozip-2111.svg" alt="">
+            <img src="./accest/img/usa_payment_fooer_strip_mob_nozip-2111.svg" alt="">
         </div>
         <div class="footercontent">
             <div class="linkk">
@@ -1226,12 +1712,12 @@
                         <div class="scan">
                             <p>SCAN TO DOWNLOAD</p>
                             <div class="qr">
-                                <img src="img/BH_app_QR.jpg" alt="">
+                                <img src="./accest/img/BH_app_QR.jpg" alt="">
                             </div>
                         </div>
                         <div class="icon-app">
-                            <div class="chplay"><img src="img/GOOGLE_ENG.png" alt=""></div>
-                            <div class="appstore"><img src="img/APPLE_ENG.png" alt=""></div>
+                            <div class="chplay"><img src="./accest/img/GOOGLE_ENG.png" alt=""></div>
+                            <div class="appstore"><img src="./accest/img/APPLE_ENG.png" alt=""></div>
                         </div>
                     </div>
                 </div>
@@ -1259,8 +1745,8 @@
             </div>
         </div>
     </footer>
-    <script src="main.js"></script>
+    <script src="./accest/js/main1.js"></script>
+    <script src="./accest/js/main.js"></script>
 </body>
 
-
-</html>
+</html>>

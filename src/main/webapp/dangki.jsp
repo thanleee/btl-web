@@ -1,26 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOOHOO | Woments and Mens</title>
-
-    <link rel="icon" href="img/logoboohoo.png">
-    <link rel="stylesheet" href="css/style-header-men.css">
+    <link rel="icon" href="./accest/img/logoboohoo.png">
+    <link rel="stylesheet" href="accest/css/style-head-women.css">
+    
     <script src="https://kit.fontawesome.com/9d9613e72c.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="accest/css/signup.css">
+    
 </head>
 
 <body>
 
     <header>
+    
         <div class="row">
             <div class="adv">
                 <div class="ani">
@@ -171,14 +175,14 @@
                                 <a href="#"><img src="img/boohoo_logo_black.png" alt=""></a>
                             </div>
                         </li>
-                        <li class="list2">
-                            <div>
-                                <p><a href="header-women.html">WOMENS</a> </p>
-                            </div>
-                        </li>
                         <li class="list1">
                             <div>
-                                <p><a href="#">MENS</a></p>
+                                <p><a href="#">WOMENS</a> </p>
+                            </div>
+                        </li>
+                        <li class="list2">
+                            <div>
+                                <p><a href="header-men.html">MENS</a></p>
                             </div>
                         </li>
                     </ul>
@@ -848,300 +852,96 @@
 
 
     </header>
+
+    
     <hr style="border: 1px solid #ddd;">
     <!-- <section>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </section> -->
     <body>
         <div class="container">
-            <div class="cart">
-                <div class="header__cart">
-                    <div class="header__cart-count">CART(1)</div>
-                    <div class="header__cart-discount">Bạn tiết kiệm 12$ cho đơn hàng này </div>
-                   <a href="" class="header__cart-checkout">
-                    <button class="header__cart-checkout-btn">
-                        <span class="header__cart-checkout-btn-text">CHECKOUT</span>
+            <div class="signup__header">
+                <span class="signup__header-title">CREATE ACCOUNT</span>
+            </div>
+            <div class="signup__connect">
+                <div class="signup__connect-text1">Connect with</div>
+                <div class="signup__connect-icon">
+                    <button class="btn__icon--face">
+                        <i class="fa-brands fa-facebook icon-face"></i>
                     </button>
-                   </a>
+                </div>
+                <div class="signup__connect-text2">By continuing you agree to our
+                    <a href="" class="signup__connect-text2--link">Terms & Conditions.</a> 
+                      See our
+                    <a href="" class="signup__connect-text2--link">Privacy Notice</a>     
                 </div>
             </div>
-            <div class="cart__titile">Hãy nhanh tay đặt hàng</div>
-            <div class="cart">
-                <div class="body__cart">
-                  <div class="body__cart--1">
-                    <div class="body__cart-box1">
-                        <div class="body__cart-box1-text">50% OFF</div>
-                        <div class="body__cart-box1-text">50% OFF EVERYTHING!*</div>
-                        <div class="body__cart-box1-pri">
-                            <div class="body__cart-box1-pri__image">
-                                <img src="https://media.boohoo.com/i/boohoo/bmm39043_taupe_xl?w=120&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit" alt="" class="box1__img">
+            
+            	<!--  DANG KI -->
+      <div class="signup__body">      
+            <form action="register" method="post">
+            		 <div class="signup__body-form">
+                        <div class="signup__body-phone">
+                            <label for="sdt" class="signup__body-phone-text text--form">My Phone</label>
+                            <input id="sdt" name="phone" type="text" required="yes" class="signup__body-email-input input__text">
+                        </div>
+                        <div class="signup__body-email">
+                            <label for="email1" class="signup__body-email-text text--form">Email Address</label>
+                            <input id="email1" name="email" type="text" required="yes" class="signup__body-email-input input__text">
+                        </div>
+                        <div class="signup__body-confirm"style="display: flex;" >
+                            <!-- <div class="signup__body-confirm--box"></div> -->
+                            <div class="chekbox">
+                                <input type="checkbox" name="checkbox" />
+                              </div>
+                            <span class="signup__body-confirm-text text-1">I confirm the email address is correct</span>
+                        </div>
+                        <div class="signup__body-password">
+                            <label for="pass1" class="signup__body-password-text text--form">Password</label>
+                            <div class="signup__body-password-input input__show">
+                                <input id="pass1" name="password" required="yes" type="password" class="signup__body-password-input input">
+                                <div class="signup__body-password-input--show input-a">
+                                    <a href="" class="input__pass-show show">Show</a>
+                                </div>
                             </div>
-                            <div class="body__cart-box1-pri__content">
-                                <div class="body__cart-box1-pri__content-name">
-                                    <div class="body__cart-box1-pri__content-text">
-                                        <a href="" class="body__cart-box1-pri__content-name__text">MAN ACTIVE COLOUR BLOCK PERFORMANCE VEST</a>
-                                    </div>
-                                    <div class="body__cart-box1-pri__content-delete">
-                                        <a href="" class="delete" alt="Remove">
-                                            X
-                                      
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="body__cart-box1-pri__content-source">
-                                    <span class="body__cart-box1-pri__content-source--text ">Shipped from the UK</span>
-                                </div>
-                                <div class="body__cart-box1-pri__content-info">
-                                    <div class="body__cart-box1-pri__content-info__size">
-                                        <div class="body__cart-box1-color"></div>
-                                        <div class="body__cart-box1-size">
-                                            M
-                                        </div>
-    
-                                    </div> 
-                                    <div class="body__cart-box1-pri__content-info__quantity">QTY: 1</div> 
-                                    <div class="body__cart-box1-pri__content-info__stock">In stock</div>
-                                </div>
-                                <div class="body__cart-box1-pri__content-final">
-                                    <div class="body__cart-box1-pri__content-final__edit">
-                                        <a href="" class="final__edit">Edit</a>
-                                    </div>
-                                    <div class="body__cart-box1-pri__content-final__price">
-                                        <span class="final__price-old">$24.00</span>
-                                        <span class="final__price-current">$12.00</span>
-                                    </div>
+                            <span class="signup__body-password-text text-1">Password has to be at least 6 characters</span>
+                        </div>
+                        <div class="signup__body-confirm__pw">
+                            <label for="confim_pass" class="signup__body-confirm__pw-text text--form">Confirm Password</label>
+                            <div class="signup__body-confirm__pw-input input__show">
+                                <input id="confim_pass" name="cfpassword" required="yes" type="password" class="signup__body-confirm__pw-input input">
+                                <div class="signup__body-confirm__pw-input--show input-a">
+                                    <a href="" class="input__confirm__pw-show show">Show</a>
                                 </div>
                             </div>
                         </div>
+                        <div class="signup__body-fname">
+                            <label for="fname" class="fname-text text--form">First Name</label>
+                            <input id="fname" name="fname" type="text" required="yes" class="fname-input input__text">
+                        </div>
+                        <div class="signup__body-lname">
+                            <label for="lname" class="lname-text text--form">Last Name</label>
+                            <input id="lname" name="lname" required="yes" type="text" class="lname-input input__text">
+                        </div>
+           
+                        <div class="signup__form-text text-1">By continuing you agree to our
+                            <a href="" class="signup__connect-text2--link">Terms & Conditions.</a> 
+                            See our
+                             <a href="" class="signup__connect-text2--link">Privacy Notice</a>   
+                        </div>
+                        <button type="submit" class="btn--create">Create Acount</button>
                     </div>
-                    <div class="body__cart-box2">
-                        <div class="body__cart-box2__img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdNicDDVQ_TelRzqG1c28sPTmQvrV8aZkQVQWqPKH5QS7M6rrMKCL2guqBxhMqqQ0AjIc&usqp=CAU" alt="" class="box2__img">
-                        </div>
-                        <div class="body__cart-box2__img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZF8BqZhhhWgeFgIIbIqMPjnVaCPgbHIjnDsxhET2HoyrmNce3tOF8pSs60-clLlxFi4U&usqp=CAU" alt="" class="box2__img">
-    
-                        </div>
-                        <div class="body__cart-box2__img">
-                            <img src="https://www.artisantg.com/assets/icons/Secure_PMT_319x250.png" alt="" class="box2__img">
-    
-                        </div>
-                    </div>
-                  </div>
-                  <div class="body__cart--2">
-                      <div class="body__cart-box3">
-                        <div class="body__cart-box3__price">
-                            <div class="body__cart-box3__price-1 box3--row">
-                                <span class="body__cart-box3__price-1--text1">YOUR CART</span>
-                                <span class="body__cart-box3__price-1--text2">$24.00</span>
-                            </div>
-                            <div class="body__cart-box3__price-2 box3--row">
-                                <span class="body__cart-box3__price-2--text1">USA STANDARD SHIPPING</span>
-                                <span class="body__cart-box3__price-2--text2">$9.99</span>
-                            </div>
-                            <div class="body__cart-box3__price-2 box3--row">
-                                <span class="body__cart-box3__price-2--text1">SALES TAX</span>
-                                <span class="body__cart-box3__price-2--text2">TBD</span>
-                            </div>
-                            <div class="body__cart-box3__price-2 box3--row">
-                                <span class="body__cart-box3__price-2--text1">DISCOUNT</span>
-                                <span class="body__cart-box3__price-2--text2">-$12.00</span>
-                            </div>
-                            <div class="body__cart-box3__price-3 box3--row">
-                                <span class="body__cart-box3__price-3--text1">Discounts included</span>
-    
-                            </div>
-                            <div class="body__cart-box3__price-2 box3--row">
-                                <span class="body__cart-box3__price-2--text1">50% OFF EVERYTHiNG!*</span>
-                                <span class="body__cart-box3__price-2--text2">-$12.00</span>
-    
-                            </div>
-                        </div>
-                        <div class="body__cart-box3__pay">
-                            <div class="body__cart-box3__pay-price box3--row">
-                                <span class="body__cart-box3__pay-price-1">ORDER TOTAL</span>
-                                <span class="body__cart-box3__pay-price-2">$21.99</span>
-                            </div>
-                            <div class="body__cart-box3__pay-text1 box3--row">Thuế được giảm khi thanh toán</div>
-                            <a href="" class="body__cart-box3__pay-btn">
-                                <button class="body__cart-box3__pay-btn--1 btn-pri">CHECKOUT</button>
-                            </a>
-                            <div class="body__cart-box3__pay-text2  ">Hoặc, Thanh toán với</div>
-                            <a href="" class="body__cart-box3__pay-bank box3--row">
-                                <img src="https://cdn0.iconfinder.com/data/icons/shift-ecommerce/32/Paypal-512.png" alt="" class="pay-bank__img">
-                                <img src="https://icon-library.com/images/paypal-icon-vector/paypal-icon-vector-4.jpg" alt="" class="pay-bank__img">
-                            </a>
-                            <a href="" class="body__cart-box3__pay-express box3--row">
-                                <button class="body__cart-box3__pay-btn--2 btn-pri">
-                                    <span class="btn--2-text">
-                                        <span class="btn--2-text-1">Klarna.</span>
-                                         Thanh toán nhanh</span>
-                                </button>
-                            </a>
-                        </div>
-                      </div>
-                      <div class="body__cart-box4">
-                        <div class="body__cart-box4__pay-bank">
-                            <span class="body__cart-box4__pay-bank-info">
-                                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5jmUkWb_h4gTSWpAwPYmIpCe77uHc7pK2zup_0VSxtNA00Qn8XDLEDM8Vdy83mhOgvw&usqp=CAU" alt="" class="box4__pay-bank__img">
-                                 -->
-                                <div class="box4__pay-bank__img"  style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5jmUkWb_h4gTSWpAwPYmIpCe77uHc7pK2zup_0VSxtNA00Qn8XDLEDM8Vdy83mhOgvw&usqp=CAU); " ></div>
-                            </span>
-                            <span class="body__cart-box4__pay-bank-text">Pay $5.50 in 4 installments every 2 weeks</span>
-    
-                        </div>
-                        <div class="body__cart-box4__pay-bank">
-                            <span class="body__cart-box4__pay-bank-info">
-                                <img src="https://cdn0.iconfinder.com/data/icons/shift-ecommerce/32/Paypal-512.png" alt="" class="box4__pay-bank__img">
-                                <!-- <img src="https://icon-library.com/images/paypal-icon-vector/paypal-icon-vector-4.jpg" alt="" class="box4__pay-bank__img"> -->
-                            </span>
-                            <span class="body__cart-box4__pay-bank-text">Pay in 4 interest-free payments on eligible purchases. 
-                            <a href="" class="body__cart-box4__pay-bank-text-2">More info</a>
-    
-                            </span>
-                        </div>
-                        <div class="body__cart-box4__pay-bank">
-                            <span class="body__cart-box4__pay-bank-info box4-text">Klarna.</span>
-                            <span class="body__cart-box4__pay-bank-text">Pay In 30 days or $5.50 in 4 installments every 2 weeks </span>
-                        </div>
-                      </div>
-                  </div>
-                    
-                </div>
-            </div>
-            <div class="cart__suggest">
-                <div class="cart__suggest-title">
-                    <span class="cart__suggest-title__1">WE THINK YOU'LL LOVE</span>
-                </div>
-                <div class="cart__suggest-product">
-                    <div class="cart__suggest-product__items">
-                        <div class="cart__suggest-product--img " style="background-image: url(https://media.boohoo.com/i/boohoo/gzz45238_cream_xl?w=450&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit);">
-                            <div class="cart__suggest-product__icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                            <button class="btn-product__img">Quick View</button>
-                            
-                        </div>
-                        <div class="cart__suggest-product--info">
-                            <a href="" class="cart__suggest-product--info-title">
-                                CREAM RETRO SUNGLASSES
-                            </a>
-                            <div class="cart__suggest-product--info-price">
-                                <span class="cart__suggest-product--info-price__current">$7.20 </span>
-                                
-                                <span class="cart__suggest-product--info-price__old">$12.00</span>
-                                <span class="i">|</span>
-                                <span class="cart__suggest-product--info-price__sale">40% OFF</span>
-                                <div class="cart__suggest-product--info-price__color-1">
-        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart__suggest-product__items">
-                        <div class="cart__suggest-product--img " style="background-image: url(https://media.boohoo.com/i/boohoo/fzz39702_chocolate_xl?w=380&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit);">
-                            <div class="cart__suggest-product__icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                            <button class="btn-product__img">Quick View</button>
-                        </div>
-                        <div class="cart__suggest-product--info">
-                            <a href="" class="cart__suggest-product--info-title">
-                                SQUARE CAT EYE SUNGLASSES
-                            </a>
-                            <div class="cart__suggest-product--info-price">
-                                <span class="cart__suggest-product--info-price__current">$9.00</span>
-                                
-                                <span class="cart__suggest-product--info-price__old">$18.00</span>
-                                <span class="i">|</span>
-                                <span class="cart__suggest-product--info-price__sale">50% OFF</span>
-                                <div class="cart__suggest-product--info-price__color-2">
-        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart__suggest-product__items">
-                        <div class="cart__suggest-product--img " style="background-image: url(https://media.boohoo.com/i/boohoo/dzz32937_black_xl?w=380&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit);">
-                            <div class="cart__suggest-product__icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                            <button class="btn-product__img">Quick View</button>
-                            
-                        </div>
-                        <div class="cart__suggest-product--info">
-                            <a href="" class="cart__suggest-product--info-title">
-                                PU FANNY PACK
-                            </a>
-                            <div class="cart__suggest-product--info-price">
-                                <span class="cart__suggest-product--info-price__current">$10.00 </span>
-                                
-                                <span class="cart__suggest-product--info-price__old">$22.00</span>
-                                <span class="i">|</span>
-                                <span class="cart__suggest-product--info-price__sale">55% OFF</span>
-                                <div class="cart__suggest-product--info-price__color-3">
-        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart__suggest-product__items">
-                        <div class="cart__suggest-product--img " style="background-image: url(https://media.boohoo.com/i/boohoo/fzz39889_black_xl?w=380&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit);">
-                            <div class="cart__suggest-product__icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                            <button class="btn-product__img">Quick View</button>
-                            
-                        </div>
-                        <div class="cart__suggest-product--info">
-                            <a href="" class="cart__suggest-product--info-title">
-                                CHUNKY RECTANGLE OVERSIZED SUNGLASSES
-                            </a>
-                            <div class="cart__suggest-product--info-price">
-                                <span class="cart__suggest-product--info-price__current">$11.00 </span>
-                                
-                                <span class="cart__suggest-product--info-price__old">$22.00</span>
-                                <span class="i">|</span>
-                                <span class="cart__suggest-product--info-price__sale">50% OFF</span>
-                                <div class="cart__suggest-product--info-price__color-4">
-        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart__suggest-product__items">
-                        <div class="cart__suggest-product--img " style="background-image: url(https://media.boohoo.com/i/boohoo/fzz40159_silver_xl?w=380&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit);">
-                            <div class="cart__suggest-product__icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                            <button class="btn-product__img">Quick View</button>
-                            
-                        </div>
-                        <div class="cart__suggest-product--info">
-                            <a href="" class="cart__suggest-product--info-title">
-                                METALLIC CROC CURVED CHAIN CROSS BODY
-                            </a>
-                            <div class="cart__suggest-product--info-price">
-                                <span class="cart__suggest-product--info-price__current">$23.00 </span>
-                                
-                                <span class="cart__suggest-product--info-price__old">$45.00</span>
-                                <span class="i">|</span>
-                                <span class="cart__suggest-product--info-price__sale">49% OFF</span>
-                                <div class="cart__suggest-product--info-price__color-5">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            
+            </form>
                    
-    
-                </div>
-               
-            </div>
+                           
+                    
+                    <div class="signup__body-img">
+                        <img src="https://us.boohoo.com/dw/image/v2/BBDT_PRD/on/demandware.static/-/Library-Sites-boohoo-content-global-web-sfra/default/dw98264f37/images/myaccount/account-image-1.jpg?sw=683&q=65" alt="" class="signup-img">
+                    </div>
+   
         </div>
     </body>
-    
-    
-    
     <footer>
 
         <div class="footerset">
@@ -1256,7 +1056,7 @@
             </div>
         </div>
     </footer>
-    <script src="main.js"></script>
+    <script src="./accest/js/main.js"></script>
 </body>
 
 

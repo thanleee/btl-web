@@ -1,21 +1,24 @@
+<%@page import="model.User"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Don's Miss Out</title>
+    <title>BOOHOO | Woments and Mens</title>
 
-    <link rel="icon" href="img/logoboohoo.png">
-    <link rel="stylesheet" href="css/style-header-men.css">
+    <link rel="icon" href="./accest/img/logoboohoo.png">
+    <link rel="stylesheet" href="./accest/css/style-head-women.css">
     <script src="https://kit.fontawesome.com/9d9613e72c.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./accest/css/style1_women.css">
 </head>
 
 <body>
@@ -167,17 +170,17 @@
                     <ul class="nav">
                         <li>
                             <div class="logo">
-                                <a href="#"><img src="img/boohoo_logo_black.png" alt=""></a>
-                            </div>
-                        </li>
-                        <li class="list2">
-                            <div>
-                                <p><a href="women.html">WOMENS</a> </p>
+                                <a href="#"><img src="./accest/img/boohoo_logo_black.png" alt=""></a>
                             </div>
                         </li>
                         <li class="list1">
                             <div>
-                                <p><a href="men.html">MENS</a></p>
+                                <p><a href="./women.jsp">WOMENS</a> </p>
+                            </div>
+                        </li>
+                        <li class="list2">
+                            <div>
+                                <p><a href="./men.jsp">MENS</a></p>
                             </div>
                         </li>
                     </ul>
@@ -191,9 +194,21 @@
 
                 </div>
                 <div class="user">
-                    <li> <a id="login-singup" class="fa-regular fa-user" href="#"></a>
+             		<li>
+             			<a style="font-size:1.8rem ; margin-top:5px" href="#">
+             			 Hello, <% 
+             			 User u = (User) session.getAttribute("fname") ; 
+             			 if(u != null ) {
+             				 out.print(u.getFname()) ; 
+             			 } ; 
+             			 %>
+             			</a>
+             		</li>
+               		   <li> <a id="login-singup" class="fa-regular fa-user" href="#"></a>
                         <div id="containerlogin" class="containerlogin">
+                        
                             <div class="container-log">
+                             <form action="login" method="post">
                                 <div class="content hop1">
                                     <div class="header">
                                         <span class="text1">LOGIN</span>
@@ -204,14 +219,13 @@
                                     </div>
                                     <div class="body body-email">
                                         <span class="text">Email</span>
-                                        <input type="text" class="input input__email"
-                                            placeholder="Nhập email của bạn">
+                                     
+                                        <input type="text" name="email" class="input input__email" placeholder="Nhập email của bạn">
                                     </div>
                                     <div class="body body-mk">
                                         <span class="text">Password</span>
                                         <div class="pw">
-                                            <input type="password" class="input input__password"
-                                                placeholder="Nhập mật khẩu của bạn">
+                                            <input type="password" name="password" class="input input__password" placeholder="Nhập mật khẩu của bạn">
                                             <div class="input__password-show">
                                                 <a href="" class="input-show show">Show</a>
                                             </div>
@@ -226,11 +240,12 @@
                                         <span class="save-password__text">Remember me</span>
                                     </div>
                                     <div class="click-login">
-                                        <button class=" click-login__login">LOG IN</button>
+                                        <button type="submit" class=" click-login__login">LOG IN</button>
                                         <a href="" class="click-login__forget">Forgot Password?</a>
                                     </div>
 
                                 </div>
+                                </form>
                                 <div class="content hop2">
 
                                     <button class=" click-login__login"><a href="./sign-up_header-women.html">REGISTER</a></button>
@@ -241,6 +256,7 @@
                             </div>
                         </div>
                     </li>
+                    <li>
                     <li> <a href="#"><span class="material-symbols-outlined">
                                 favorite
                             </span></a></li>
@@ -318,8 +334,12 @@
                                         </div>
                                         <span class="viewcart__text">*Plus applicable taxes</span>
                                         <div class="btn__viewcart flex ">
+                                            
                                             <div class="btn__1">
-                                                <button class="btn btn--1"><a href="./cart_header-women.html">VIEW CART</a></button>
+                                                <a href="./cart_header-women.html" class="">
+
+                                                    <button class="btn btn--1">VIEW CART</button>
+                                                </a>
                                             </div>
                                             <div class="btn__2">
                                                 <button class="btn btn--2">CHECKOUT</button>
@@ -334,6 +354,14 @@
                             </div>
                         </div>
                     </li>
+                    <li> <a href="dangxuat" style="font-size:1.8rem">
+                     <% 
+             	
+             			 if(u != null ) {
+             				 out.print("Đăng xuất") ; 
+             			 } ; 
+             			 %>
+                    </a></li>
 
 
                 </div>
@@ -848,24 +876,52 @@
 
     </header>
     <hr style="border: 1px solid #ddd;">
-    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+
 
 
     <table id="table1">
         <tr>
-            <td>
-                <div class="col1">
-                    <br>
-                    <p style="font-size:large;"><B>DON'T MISS OUT</B></p>
+            <td class="col1">
+                <div>
+                    <p style="font-size:large;"><B>NEW IN</B></p>
+                    <p>
+                        Closet in need of a refresh? Calling all trendsetters, our women’s new in edit has all the
+                        latest pieces that have just dropped on site. Whether you’re stocking up on staples or looking
+                        to change up your style, shop
+                        <span id="text" style="display:none">
+                            everything from trending styles to elevated basics and more. Whatever your vibe, these are
+                            styles you’re going to want in your closet. Get clued up on the clothes everyone’s talking
+                            about with our new in shop, updated daily with 100s of styles so you’ll never miss a trick!
+                        </span>
+                        <a id="toggleBtn" href="#" onclick="toggle()">...Read more</a>
+                    </p>
                 </div>
-                <div class="col2">
-                    <a href="#">ENERY-SAVING MODE</a><br><br>
+            </td>
+            <td class="col2">
+                <div>
+                    <br>
+                    <a href="#1">Just Landed Today</a><br>
+                    <a href="#1">New Season</a><br>
+                    <a href="#1">Back In Stock</a><br>
+                    <a href="#1">New In Dresses</a><br>
+                    <a href="#1">New Beauty Products</a><br>
+                    <a href="#1">New In Shoes</a>
+                </div>
+            </td>
+            <td class="col3">
+                <div class="col31">
+                    <br>
+                    <a href="#1">New-In Accessories</a><br>
+                    <a href="#1">New In Plus Size Clothing</a>
+                </div>
+                <div class="col32">
+                    <a href="#">ENERY-SAVING MODE</a><br>
                     <a href="#">WHAT'S THIS?</a>
                 </div>
             </td>
         </tr>
     </table>
-
     <div class="main">
         <aside class="slidebar">
             <div>
@@ -875,20 +931,18 @@
                         <span>US SIZE </span>
                         <div class="container-fillter">
                             <ul class="product-fillter">
+                                <li>0</li>
+                                <li>2</li>
+                                <li>4</li>
+                                <li>5</li>
+                                <li>6</li>
                                 <li>7</li>
                                 <li>8</li>
                                 <li>9</li>
                                 <li>10</li>
-                                <li>11</li>
                                 <li>12</li>
-                                <li>13</li>
-                                <li>28</li>
-                                <li>30</li>
-                                <li>32</li>
-                                <li>34</li>
-                                <li>36</li>
-                                <li>38</li>
-                                <li>40</li>
+                                <li>14</li>
+                                <li>16</li>
                             </ul>
                         </div>
                     </div>
@@ -899,20 +953,20 @@
                         <div>
                             <div class="container-fillter">
                                 <ul class="product-fillter">
-                                    <li>Gray</li>
+                                    <li>Beige</li>
+                                    <li>Black</li>
+                                    <li>Blue</li>
+                                    <li>Brown</li>
+                                    <li>Clear</li>
+                                    <li>Gold</li>
+                                    <li>Green</li>
+                                    <li>Grey</li>
                                     <li>Khaki</li>
                                     <li>Metallics</li>
                                     <li>Multi</li>
                                     <li>Navy</li>
                                     <li>Neon</li>
                                     <li>Nude</li>
-                                    <li>Orange</li>
-                                    <li>Pink</li>
-                                    <li>Purple</li>
-                                    <li>Red</li>
-                                    <li>Silver</li>
-                                    <li>White</li>
-                                    <li>Yellow</li>
                                 </ul>
                             </div>
                         </div>
@@ -967,26 +1021,26 @@
                         <div>
                             <div class="container-fillter">
                                 <ul class="product-fillter">
-                                    <li class="flex-12">2-in-1 Shorts</li>
-                                    <li class="flex-12">Aviator Jackets</li>
-                                    <li class="flex-12">Aviator Sungglasses</li>
-                                    <li class="flex-12">Bags & Rucksacks</li>
-                                    <li class="flex-12">Basic Shorts</li>
+                                    <li class="flex-12">2 Part Heels</li>
+                                    <li class="flex-12">Anklets</li>
+                                    <li class="flex-12">Ballet Pumps</li>
+                                    <li class="flex-12">Bandeau</li>
+                                    <li class="flex-12">Basic Hoodies</li>
+                                    <li class="flex-12">Basic Leggings</li>
                                     <li class="flex-12">Basic Sweatpants</li>
-                                    <li class="flex-12">Basic Sweatershirts</li>
-                                    <li class="flex-12">Basic T-shirts</li>
-                                    <li class="flex-12">Basic vests</li>
-                                    <li class="flex-12">Beanies</li>
+                                    <li class="flex-12">Basic Sweatshirts</li>
+                                    <li class="flex-12">Beach Cover Ups</li>
+                                    <li class="flex-12">Beach Dresses</li>
+                                    <li class="flex-12">Beach Jumpsuits</li>
+                                    <li class="flex-12">Beach Kaftans & Kimonos</li>
+                                    <li class="flex-12">Beach Matching Sets</li>
+                                    <li class="flex-12">Beach Pants</li>
+                                    <li class="flex-12">Beach Rompers</li>
+                                    <li class="flex-12">Beach Sarongs</li>
+                                    <li class="flex-12">Beach Shirts</li>
+                                    <li class="flex-12">Beach Skirts</li>
+                                    <li class="flex-12">Beachwear</li>
                                     <li class="flex-12">Belts</li>
-                                    <li class="flex-12">Biker Jeans</li>
-                                    <li class="flex-12">Blazers</li>
-                                    <li class="flex-12">Bomber Jackets</li>
-                                    <li class="flex-12">Bomber Tracksuits</li>
-                                    <li class="flex-12">Boots</li>
-                                    <li class="flex-12">Borgs Jackets</li>
-                                    <li class="flex-12">Boxers</li>
-                                    <li class="flex-12">Bracelets</li>
-                                    <li class="flex-12">Briefs & Thongs</li>
                                 </ul>
                             </div>
                         </div>
@@ -1034,7 +1088,10 @@
                         <div>
                             <div class="container-fillter">
                                 <ul class="product-fillter">
-                                    <li class="flex-12">boohooMan</li>
+                                    <li class="flex-12">Ameliorate</li>
+                                    <li class="flex-12">boohoo</li>
+                                    <li class="flex-12">Malibu</li>
+                                    <li class="flex-12">Mama Mio</li>
                                 </ul>
                             </div>
                         </div>
@@ -1052,14 +1109,14 @@
             </div>
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img1.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img1.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1/icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
 
@@ -1080,20 +1137,20 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #dbe3ef;"></div>
+                        <div class="block-color" style="background: #ef4e50;"></div>
                     </div>
                 </div>
             </div>
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img2.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img2.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1113,20 +1170,20 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #ef4e50;"></div>
+                        <div class="block-color" style="background: #109e50;"></div>
                     </div>
                 </div>
             </div>
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img3.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img3.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1147,21 +1204,21 @@
                     </div>
                     <div class="product-color">
                         <div class="product-color">
-                            <div class="block-color" style="background: #e9eef8;"></div>
+                            <div class="block-color" style="background: #ef4e50;"></div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img4.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img4.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1181,21 +1238,21 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #ee4c4d;"></div>
+                        <div class="block-color" style="background: #109e50;"></div>
                     </div>
                 </div>
             </div>
 
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img5.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img5.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1215,21 +1272,21 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #e9e9e9;"></div>
+                        <div class="block-color" style="background: #109e50;"></div>
                     </div>
                 </div>
             </div>
 
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img6.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img6.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1249,21 +1306,21 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #3e72e2;"></div>
+                        <div class="block-color" style="background: #ef4e50;"></div>
                     </div>
                 </div>
             </div>
 
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img7.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img7.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1283,21 +1340,21 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #f0e7e2;"></div>
+                        <div class="block-color" style="background: #109e50;"></div>
                     </div>
                 </div>
             </div>
 
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img8.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img8.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1317,21 +1374,21 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #3e72e2;"></div>
+                        <div class="block-color" style="background: #ef4e50;"></div>
                     </div>
                 </div>
             </div>
 
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img9.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img9.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1351,21 +1408,21 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #ff5b42;"></div>
+                        <div class="block-color" style="background: #676852;"></div>
                     </div>
                 </div>
             </div>
 
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img10.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img10.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1385,21 +1442,21 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #f44234;"></div>
+                        <div class="block-color" style="background: #676852;"></div>
                     </div>
                 </div>
             </div>
 
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img11.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img11.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1419,21 +1476,21 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #2c2930;"></div>
+                        <div class="block-color" style="background: #676852;"></div>
                     </div>
                 </div>
             </div>
 
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img12.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img12.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1453,21 +1510,21 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #171719;"></div>
+                        <div class="block-color" style="background: #696960;"></div>
                     </div>
                 </div>
             </div>
 
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img13.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img13.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1487,21 +1544,21 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #66d7b3;"></div>
+                        <div class="block-color" style="background: blue;"></div>
                     </div>
                 </div>
             </div>
 
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img14.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img14.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1521,21 +1578,21 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #efeeef;"></div>
+                        <div class="block-color" style="background: pink;"></div>
                     </div>
                 </div>
             </div>
 
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img15.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img15.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1555,21 +1612,21 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #04d5b4;"></div>
+                        <div class="block-color" style="background: #11e9c5;"></div>
                     </div>
                 </div>
             </div>
 
             <div class="product">
                 <div class="product-image">
-                    <a><img src="./img/img16.webp" style="max-width: 100%;"></img></a>
+                    <a><img src="./accest/img/img1/img16.webp" style="max-width: 100%;"></img></a>
                     <a>
                         <div class="quick-view">
                             Quick view
                         </div>
                     </a>
                     <div class="icon-heart">
-                        <img src="./img//icon-heart.png" alt="save for later" title="save for later"
+                        <img src="./accest/img/img1//icon-heart.png" alt="save for later" title="save for later"
                             style="max-width: 100%;">
                     </div>
                 </div>
@@ -1589,7 +1646,7 @@
                         </div>
                     </div>
                     <div class="product-color">
-                        <div class="block-color" style="background: #efeeef;"></div>
+                        <div class="block-color" style="background: #790c79;"></div>
                     </div>
                 </div>
             </div>
@@ -1601,14 +1658,17 @@
             </div>
         </div>
     </div>
-
     <table id="table2">
         <td>
-            <p style="font-size: 18px;">DON'T MISS OUT</p>
+            <p style="font-size: 18px;">ALL NEW IN</p>
+            <p>Dive into our <b>New In</b> section and shop our edit of ladies’ on-trend clothing that’s updated daily.
+                Dresses arrive in all styles and shapes, from peplums and bodycons, to midis and maxis. Do the slouch in
+                the season's new structure - think shell tops and borrowed from the boyfriend bomber jackets in quirky
+                club Tropicana prints. This season brights will take your style to new heights so shop our daily update
+                of stylish separates, from shiny disco pants to skater skirts. Here you’ll find the latest fashion at
+                your fingertips.</p>
         </td>
     </table>
-
-
 
 
     <footer>
@@ -1621,7 +1681,7 @@
             </a>
         </div>
         <div class="b-footer_top">
-            <img src="img/usa_payment_fooer_strip_mob_nozip-2111.svg" alt="">
+            <img src="./accest/img/usa_payment_fooer_strip_mob_nozip-2111.svg" alt="">
         </div>
         <div class="footercontent">
             <div class="linkk">
@@ -1692,12 +1752,12 @@
                         <div class="scan">
                             <p>SCAN TO DOWNLOAD</p>
                             <div class="qr">
-                                <img src="img/BH_app_QR.jpg" alt="">
+                                <img src="./accest/img/BH_app_QR.jpg" alt="">
                             </div>
                         </div>
                         <div class="icon-app">
-                            <div class="chplay"><img src="img/GOOGLE_ENG.png" alt=""></div>
-                            <div class="appstore"><img src="img/APPLE_ENG.png" alt=""></div>
+                            <div class="chplay"><img src="./accest/img/GOOGLE_ENG.png" alt=""></div>
+                            <div class="appstore"><img src="./accest/img/APPLE_ENG.png" alt=""></div>
                         </div>
                     </div>
                 </div>
@@ -1725,8 +1785,8 @@
             </div>
         </div>
     </footer>
-    <script src="main1.js"></script>
-    <script src="/main.js"></script>
+    <script src="./accest/js/main1.js"></script>
+    <script src="./accest/js/main.js"></script>
 </body>
 
 </html>

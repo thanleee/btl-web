@@ -207,10 +207,10 @@ header.hidden{
    
 }
 .user li:nth-child(2) {
-    margin-top: 3px;
+    margin-top: 5px;
   }
 .user li:nth-child(3) {
-    margin-top: 2px;
+    margin-top: 3px;
    
   }
 .row1 .user li>a:hover{
@@ -601,7 +601,7 @@ li.menu-bar1:nth-of-type(4) .menu1 {
     right: 0;
     left: 0;
     z-index: 2;
-    margin-top: 109px;
+    margin-top: 118px;
     display: none;
     font-size: 62.5%;
     line-height: 1.6rem;
@@ -761,7 +761,7 @@ li.menu-bar1:nth-of-type(4) .menu1 {
     right: 0;
     left: 0;
     z-index: 2;
-    margin-top: 109px;
+    margin-top: 118px;
     display: none;
     font-size: 62.5%;
     line-height: 1.6rem;
@@ -890,7 +890,7 @@ li.menu-bar1:nth-of-type(4) .menu1 {
     font-weight: 600;
     /* text-align: center; */
 
- 
+
 }
 .body__cart-box1-pri__content-info{
     display: flex;
@@ -1073,19 +1073,19 @@ li.menu-bar1:nth-of-type(4) .menu1 {
     }
     .user > li .containcart{
         display: none;
-        margin-top: 100px;
+        margin-top: 109px;
         border-top: 1px solid #ddd;
     }
     /* ------section------- */
     section{
         position: relative;
-        top: -41px;
+        top: -45.5px;
     }
     
 }
 /*---------------section--------------*/
 section{
-    
+    margin-top: 11px;
    
 }
 
