@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/src/java/controller/ListServlet.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/web/update.jsp</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/src/java/controller/AddServlet.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/src/java/model/Category.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/src/java/controller/UpdateServlet.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/src/java/controller/DeleteServlet.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/src/java/dal/DBContext.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/src/java/model/Product.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/web/men.jsp</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/web/women.jsp</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/src/conf/MANIFEST.MF</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/web/list.jsp</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/web/accest/css/signup.css</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/web/product.jsp</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/web/sign-up_header-women.jsp</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/web/cart_header_women.jsp</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/src/java/dal/CategoryDAO.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/btlweb/src/java/dal/DAO.java</file>
+        </group>
+    </open-files>
+</project-private>
