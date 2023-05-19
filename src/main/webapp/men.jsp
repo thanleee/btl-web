@@ -174,7 +174,7 @@
                         </li>
                         <li class="list2">
                             <div>
-                                <p><a href="women.jsp">WOMENS</a> </p>
+                                <p><a href="index">WOMENS</a> </p>
                             </div>
                         </li>
                         <li class="list1">
@@ -218,6 +218,9 @@
                                                 <a href="" class="input-show show">Show</a>
                                             </div>
                                         </div>
+                                        <% if (request.getAttribute("error") != null) { %>
+   									<p class="error-message"><%= request.getAttribute("error") %></p>
+										<% } %>
                                     </div>
                                     <div class="save-password">
                                         <a href="" class="save-password__click-on">

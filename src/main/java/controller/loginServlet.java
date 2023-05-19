@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import database.UserDao;
 import jakarta.servlet.RequestDispatcher;
@@ -37,23 +38,31 @@ public class loginServlet extends HttpServlet {
 			HttpSession session = request.getSession() ; 
 			session.setAttribute("fname", u);
 //			response.sendRedirect("women.jsp");
-			 if (u.getFname().equals("tien")) {
-		            redirectToPage(request, response, "women.jsp");
+			 if (u.getFname().equals("tienmm")) {
+		            redirectToPage(request, response, "men");
 		        } else {
-		            redirectToPage(request, response, "men.jsp");
+		            redirectToPage(request, response, "index");
 		        }
+//			  PrintWriter out = response.getWriter();
+//			 String hideLoginBoxScript = "<script>document.getElementById('box').style.display = 'none';</script>";
+//			   out.println(hideLoginBoxScript);
+//
+//			   // Hiển thị chữ "Hello"
+//			   String showWelcomeMessageScript = "<script>document.getElementById('message').style.display = 'block';</script>";
+//			   out.println(showWelcomeMessageScript);
 			
 		}
 		else {
-////			 if (!password.equals(password)) {
-//				   request.setAttribute("error", "Sai mật khẩu. Vui lòng nhập lại.");
-//				   RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-//				   rd.forward(request, response);
-////				}
-			   String errorMessage = "Sai mật khẩu. Vui lòng nhập lại.";
-			   String script = "<script>document.getElementById('error-message').innerText = '" + errorMessage + "'; document.getElementById('error-message').style.display = 'block';</script>";
-//			  out.println(script);
-			System.out.println("loi dang nhap");
+//			 if (!password.equals(password)) {
+				   request.setAttribute("error", "Sai mật khẩu. Vui lòng nhập lại.");
+				   RequestDispatcher rd = request.getRequestDispatcher("women");
+				   rd.forward(request, response);
+				
+//			   String errorMessage = "Sai mật khẩu. Vui lòng nhập lại.";
+//			   String script = "<script>document.getElementById('error-message').innerText = '" + errorMessage + "'; document.getElementById('error-message').style.display = 'block';</script>";
+//			   PrintWriter out = response.getWriter();
+//			out.println(script);
+//			System.out.println("loi dang nhap");
 		}
 		
 	}

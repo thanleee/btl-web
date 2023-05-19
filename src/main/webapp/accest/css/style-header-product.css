@@ -651,7 +651,12 @@ li.menu-bar1:nth-of-type(4) .menu1 {
     flex-direction: column;
 }
 
+.body-email{
 
+}
+.body-email-input__email{
+
+}
 .user>li .input{
     margin-bottom: 25px ;
     height: 35px; 
@@ -1027,7 +1032,9 @@ li.menu-bar1:nth-of-type(4) .menu1 {
     .nav .list2 div{
         display: none;
     }
- 
+    .row{
+      
+    }
     .logo img{
         width: 110px;
         height: auto;
