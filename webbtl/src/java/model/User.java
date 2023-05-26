@@ -10,10 +10,11 @@ public class User implements Serializable {
 	private String cfpassword ; 
 	private String fname ; 
 	private String lname ; 
+        private int mid;
 	public User() {
 		super(); 
 	}
-	public User(String phone, String email, String password, String cfpassword, String fname, String lname) {
+	public User(String phone, String email, String password, String cfpassword, String fname, String lname,int mid) {
 		super();
 		this.phone = phone;
 		this.email = email;
@@ -21,6 +22,7 @@ public class User implements Serializable {
 		this.cfpassword = cfpassword;
 		this.fname = fname;
 		this.lname = lname;
+                this.mid = mid;
 	}
 	public String getPhone() {
 		return phone;
@@ -58,21 +60,22 @@ public class User implements Serializable {
 	public void setLname(String lname) {
 		this.lname = lname;
 	}
+        public int getMid() {
+        return mid;
+         }
 
-	@Override
-	public String toString() {
-		
-		return "User{" + 
-				"phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", cfpassword='" + cfpassword + '\'' +
-                ", fname='" + fname + '\'' +
-                ", lname='" + lname + '\'' +
-                '}';
-	}
+        public void setMid(int cid) {
+        this.mid = mid;
+        }
+
+    @Override
+    public String toString() {
+        return "User{" + "phone=" + phone + ", email=" + email + ", password=" + password + ", cfpassword=" + cfpassword + ", fname=" + fname + ", lname=" + lname + ", mid=" + mid + '}';
+    }
+	
 	
 	
 	
 	
 }
+

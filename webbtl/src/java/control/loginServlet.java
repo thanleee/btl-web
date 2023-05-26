@@ -1,5 +1,7 @@
 package control;
 
+import dal.DAO;
+import dal.DAOCategory;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -11,6 +13,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import java.util.List;
+import model.Category;
+import model.Product;
 import model.User;
 
 
@@ -31,38 +36,28 @@ public class loginServlet extends HttpServlet {
 		String email = request.getParameter("email") ; 
 		String password = request.getParameter("password") ; 
 		User u = new UserDao().layThongTinTaiKhoan(email) ; 
-		
+		DAOCategory c= new DAOCategory();
+                DAO p = new DAO();
+                 int count = p.countAllProdunt();
+                List<Category> listC = c.getAllCategory();
+                List<Product>list = p.getTop4();
+           
 		
 		if(new UserDao().kiemTraDangNhap(email,password)) {
 			 
 			HttpSession session = request.getSession() ; 
 			session.setAttribute("fname", u);
-//			response.sendRedirect("women.jsp");
-			 if (u.getFname().equals("tienmm")) {
-		            redirectToPage(request, response, "men");
-		        } else {
-		            redirectToPage(request, response, "women");
-		        }
-//			  PrintWriter out = response.getWriter();
-//			 String hideLoginBoxScript = "<script>document.getElementById('box').style.display = 'none';</script>";
-//			   out.println(hideLoginBoxScript);
-//
-//			   // Hiển thị chữ "Hello"
-//			   String showWelcomeMessageScript = "<script>document.getElementById('message').style.display = 'block';</script>";
-//			   out.println(showWelcomeMessageScript);
+		        redirectToPage(request, response, "women");
 			
 		}
 		else {
-//			 if (!password.equals(password)) {
-				   request.setAttribute("error", "Sai mật khẩu. Vui lòng nhập lại.");
+                                   request.setAttribute("listC", listC);
+                                   request.setAttribute("pr", list);
+                                   request.setAttribute("count", count);
+				   request.setAttribute("error", "Email hoặc mật khẩu không chính xác!");
 				   RequestDispatcher rd = request.getRequestDispatcher("women1.jsp");
 				   rd.forward(request, response);
 				
-//			   String errorMessage = "Sai mật khẩu. Vui lòng nhập lại.";
-//			   String script = "<script>document.getElementById('error-message').innerText = '" + errorMessage + "'; document.getElementById('error-message').style.display = 'block';</script>";
-//			   PrintWriter out = response.getWriter();
-//			out.println(script);
-//			System.out.println("loi dang nhap");
 		}
 		
 	}

@@ -9,46 +9,38 @@ package model;
  * @author DELL
  */
 public class Category {
-      private int ID;
-    private String name;
-    private String describe;
+      private int cid;
+    private String cname;
 
     public Category() {
     }
 
-    public Category(int ID, String name, String describe) {
-        this.ID = ID;
-        this.name = name;
-        this.describe = describe;
-    }
-    
-    public int getID() {
-        return ID;
+    public Category(int cid, String cname) {
+        this.cid = cid;
+        this.cname = cname;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public int getCid() {
+        return cid;
     }
 
-    public String getName() {
-        return name;
+    public void setCid(int cid) {
+        this.cid = cid;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getCname() {
+        return cname;
     }
 
-    public String getDescribe() {
-        return describe;
-    }
-
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setCname(String cname) {
+        this.cname = cname;
     }
 
     @Override
     public String toString() {
-        return "Category{" + "ID=" + ID + ", name=" + name + ", describe=" + describe + '}';
+        return "Category{" + "cid=" + cid + ", cname=" + cname + '}';
     }
+   
     
+
 }

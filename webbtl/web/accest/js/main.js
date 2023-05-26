@@ -12,7 +12,7 @@ function scrolll() {
             document.querySelector("header").classList.remove("hidden");
         }
         previous = current;
-    }
+    };
 }
 scrolll();
 // tạo menu trái
@@ -23,7 +23,7 @@ bartabb.addEventListener("click", function () {
         box.style.display = "flex";
         window.onscroll = function () {
             document.querySelector("header").classList.remove("hidden");
-        }
+        };
     } else {
         slideOut();
     }
@@ -47,7 +47,7 @@ logInSingUp.addEventListener("click", function () {
         logIn.style.display = "flex";
         window.onscroll = function () {
             document.querySelector("header").classList.remove("hidden");
-        }
+        };
     } else {
         slideOut2();
     }
@@ -65,7 +65,7 @@ viewcart.addEventListener("click", function () {
         containcart.style.display = "flex";
         window.onscroll = function () {
             document.querySelector("header").classList.remove("hidden");
-        }
+        };
     } else {
         slideOut3();
     }
@@ -105,45 +105,45 @@ women.addEventListener("click", function () {
 
 
 //------ section------
-const options = document.querySelectorAll('.slidebar-option')
-const optionsDisplays = document.querySelectorAll('.option-display')
-const girdProduct = document.querySelector('.container')
+const options = document.querySelectorAll('.slidebar-option');
+const optionsDisplays = document.querySelectorAll('.option-display');
+const girdProduct = document.querySelector('.container');
 
 const changeGrid = (number) => {
-    console.log('run')
+    console.log('run');
     if (Number.parseInt(number) === 3) {
-        girdProduct.classList.add('gird-3')
-        girdProduct.classList.remove('gird-4')
+        girdProduct.classList.add('gird-3');
+        girdProduct.classList.remove('gird-4');
     } else if (Number.parseInt(number) === 4) {
-        girdProduct.classList.add('gird-4')
-        girdProduct.classList.remove('gird-3')
+        girdProduct.classList.add('gird-4');
+        girdProduct.classList.remove('gird-3');
     }
-}
+};
 
 options.forEach((ele, index) => {
     ele.addEventListener('click', () => {
         if (ele.classList.contains('show')) {
-            ele.classList.remove('show')
+            ele.classList.remove('show');
         } else {
-            ele.classList.add('show')
+            ele.classList.add('show');
         }
-    })
+    });
 
-})
+});
 
 optionsDisplays.forEach((ele, index) => {
     ele.addEventListener('click', () => {
         if (!ele.classList.contains('active')) {
-            ele.classList.add('active')
+            ele.classList.add('active');
             if (index === 0) {
-                optionsDisplays[1].classList.remove('active')
+                optionsDisplays[1].classList.remove('active');
             } else {
-                optionsDisplays[0].classList.remove('active')
+                optionsDisplays[0].classList.remove('active');
             }
-            changeGrid(ele.innerText)
+            changeGrid(ele.innerText);
         }
-    })
-})
+    });
+});
 
 function toggle() {
     var text = document.getElementById("text");
@@ -155,4 +155,56 @@ function toggle() {
         text.style.display = "none";
         btn.innerHTML = "...Read more";
     }
+}
+//loadmore
+//function  loadMore(){
+//    var amount = document.getElementsByClassName("product").length;
+//    $.ajax({
+//        url: "/web/load",
+//        type: "get",
+//        data: {
+//            exits: amount
+//       
+//        },
+//        success: function (data){
+//            var row = document.getElementById("content");
+//            row.innerHTML += data;
+//            var productCount = document.getElementById("productCount");
+//    var currentCount = parseInt(productCount.innerText);
+//    var newCount = currentCount + amount; // data.length là số lượng sản phẩm mới thêm vào
+//    productCount.innerText = newCount;
+//        }
+//    });
+//}
+
+var shouldLoadMore = true; // Biến kiểm tra
+
+function loadMore() {
+    if (!shouldLoadMore) {
+        return; // Nếu không nên tải thêm sản phẩm, thoát khỏi hàm
+    }
+
+    var amount = document.getElementsByClassName("product").length;
+    
+    $.ajax({
+        url: "/web/load",
+        type: "get",
+        data: {
+            exits: amount
+        },
+        success: function (data) {
+            var row = document.getElementById("content");
+            row.innerHTML += data;
+            
+            var productCount = document.getElementById("productCount");
+            var currentCount = parseInt(productCount.innerText);
+            
+            if (data.length === 0) {
+                shouldLoadMore = false; // Nếu không có sản phẩm mới nữa, không nên tải thêm
+            } else {
+                var newCount = currentCount + 4; // data.length là số lượng sản phẩm mới thêm vào
+                productCount.innerText = newCount;
+            }
+        }
+    });
 }

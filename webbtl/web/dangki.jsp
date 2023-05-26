@@ -1,5 +1,7 @@
+<%@page import="model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
@@ -177,12 +179,12 @@
                         </li>
                         <li class="list1">
                             <div>
-                                <p><a href="#">WOMENS</a> </p>
+                                <p><a href="women">WOMENS</a> </p>
                             </div>
                         </li>
                         <li class="list2">
                             <div>
-                                <p><a href="header-men.html">MENS</a></p>
+                                <p><a href="men">MENS</a></p>
                             </div>
                         </li>
                     </ul>
@@ -196,31 +198,38 @@
 
                 </div>
                 <div class="user">
-                    <li> <a id="login-singup" class="fa-regular fa-user" href="#"></a>
+                     <li> <a id="login-singup" class="fa-regular fa-user" href="#"></a>
+               		  <c:if test = "${fname.fname == null}">
                         <div id="containerlogin" class="containerlogin">
+                            
+                        
                             <div class="container-log">
+                           
+                             <form action="login" method="post">
                                 <div class="content hop1">
                                     <div class="header">
                                         <span class="text1">LOGIN</span>
-                                        <button id="delete" onclick="slideOut2()">
+                                        <a href="women"><button id="delete" onclick="slideOut2()">
                                             <div class="delete">X</div>
                                         </button>
-
+                                        </a>
                                     </div>
                                     <div class="body body-email">
-                                        <label for="email" class="text">Email</label>
-                                        <input id="email" type="text" class="input input__email"
-                                            placeholder="Nhập email của bạn">
+                                        <span class="text">Email</span>
+                                     
+                                        <input type="text" name="email" class="input input__email" placeholder="Nhập email của bạn">
                                     </div>
                                     <div class="body body-mk">
-                                        <label for="pass" class="text">Password</label>
+                                        <span class="text">Password</span>
                                         <div class="pw">
-                                            <input id="pass" type="password" class="input input__password"
-                                                placeholder="Nhập mật khẩu của bạn">
+                                            <input type="password" name="password" class="input input__password" placeholder="Nhập mật khẩu của bạn">
                                             <div class="input__password-show">
                                                 <a href="" class="input-show show">Show</a>
                                             </div>
                                         </div>
+                                        <% if (request.getAttribute("error") != null) { %>
+                                        <p class="error-message" style="padding-bottom: 15px; margin-top: -20px; color: red"><%= request.getAttribute("error") %></p>
+											<% } %>	
                                     </div>
                                     <div class="save-password">
                                         <a href="" class="save-password__click-on">
@@ -231,20 +240,22 @@
                                         <span class="save-password__text">Remember me</span>
                                     </div>
                                     <div class="click-login">
-                                        <button class=" click-login__login">LOG IN</button>
-                                        <a href="" class="click-login__forget">Forgot Password?</a>
+                                        <button type="submit" class=" click-login__login">LOG IN</button>
+                                        <a href="#" class="click-login__forget">Forgot Password?</a>
                                     </div>
 
+                            
+                                </form>
                                 </div>
                                 <div class="content hop2">
-
-                                    <button class=" click-login__login"><a href="#">REGISTER</a></button>
+                                    <a href="dangki.jsp">
+                                    <button class=" click-login__login">REGISTER</button></a>
                                 </div>
                                 <div class="img-log"
                                     style="background-image: url(https://media.boohoo.com/i/boohooamplience/375x88_BANNER_NEWIN_2);">
                                 </div>
                             </div>
-                        </div>
+                        </div></c:if>
                     </li>
                     <li> <a href="#"><span class="material-symbols-outlined">
                                 favorite
@@ -884,6 +895,9 @@
                         <div class="signup__body-phone">
                             <label for="sdt" class="signup__body-phone-text text--form">My Phone</label>
                             <input id="sdt" name="phone" type="text" required="yes" class="signup__body-email-input input__text">
+                             <% if (request.getAttribute("error2") != null) { %>
+                                        <p class="error-message" style="padding-bottom: 15px; color: red"><%= request.getAttribute("error2") %></p>
+											<% } %>	
                         </div>
                         <div class="signup__body-email">
                             <label for="email1" class="signup__body-email-text text--form">Email Address</label>
@@ -904,7 +918,7 @@
                                     <a href="" class="input__pass-show show">Show</a>
                                 </div>
                             </div>
-                            <span class="signup__body-password-text text-1">Password has to be at least 6 characters</span>
+                            <span class="signup__body-password-text text-1">Password has to be at least 8 characters</span>
                         </div>
                         <div class="signup__body-confirm__pw">
                             <label for="confim_pass" class="signup__body-confirm__pw-text text--form">Confirm Password</label>
@@ -914,7 +928,11 @@
                                     <a href="" class="input__confirm__pw-show show">Show</a>
                                 </div>
                             </div>
+                             <% if (request.getAttribute("error1") != null) { %>
+                                        <p class="error-message" style="padding-bottom: 15px; color: red"><%= request.getAttribute("error1") %></p>
+											<% } %>	
                         </div>
+                             
                         <div class="signup__body-fname">
                             <label for="fname" class="fname-text text--form">First Name</label>
                             <input id="fname" name="fname" type="text" required="yes" class="fname-input input__text">

@@ -6,6 +6,7 @@
 package control;
 
 import dal.DAO;
+import dal.DAOCategory;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -13,6 +14,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
+import model.Category;
 import model.Product;
 
 /**
@@ -60,10 +63,13 @@ public class ProductMen extends HttpServlet {
         String id_raw=request.getParameter("id");
        int id;
        DAO dao=new DAO();
+        DAOCategory c= new DAOCategory();
         try {
             id = Integer.parseInt(id_raw);
             Product p=dao.getProductByIdMen(id);
+            List<Category> listC = c.getAllCategory();
             request.setAttribute("product", p);
+            request.setAttribute("listC", listC);
             request.getRequestDispatcher("product.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             

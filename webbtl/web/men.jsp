@@ -1027,9 +1027,7 @@
                                 <span class="price-after-reduce">$${o.price}</span>
                                 <span class="price-before-reduce">$50.00</span>
                             </div>
-                            <div class="precent-reduce">
-                                ${o.pricesale}% OFF
-                            </div>
+                            
                         </div>
                         <div class="product-color">
                             <div class="block-color" style="background: ${o.color};"></div>

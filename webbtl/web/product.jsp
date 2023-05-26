@@ -195,11 +195,12 @@
                     </div>
 
                     <div class="search1">
-                        <input type="search" placeholder="What are you looking for?">
-                        <button> <a href="#"><span class="material-symbols-outlined">
-                                    search
-                                </span></a></button>
-
+                        <form style="min-width: 100%;display: flex;align-items: center; flex-direction: row-reverse" action="search" method="get">
+                    <input value="${txts}" name="txt" type="search" placeholder="What are you looking for?">
+                    <button type="submit"> <a href="#"><span class="material-symbols-outlined">
+                                search
+                            </span></a></button>
+                      </form>
                     </div>
                     <div class="user">
                                     	
@@ -325,505 +326,51 @@
 
             </div>
             <div class="menu">
-                <div class="menu-bar">
-                    <li class="menu-bar1"><a href="#" class="menu-bar11">NEW IN</a>
-                        <ul class="menu1">
-                            <li class="sub-menu">
-                                <p> NEW IN</p>
-                                <ul>
-                                    <li><a href="#">View All</a></li>
-                                    <li><a href="#"> New In Clothing</a></li>
-                                    <li><a href="#">New In Dresses</a></li>
-                                    <li><a href="#"> New In Accessories</a></li>
-                                    <li><a href="#">New In Beauty</a></li>
-                                    <li><a href="#">Just Landed Today</a></li>
-                                    <li><a href="#">Just Landed</a></li>
-                                    <li><a href="#">Bestsellers</a></li>
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p> NEW IN BY FIGURE</p>
-                                <ul>
-                                    <li><a href="#">New In Plus & Curve</a></li>
-                                    <li><a href="#">New In Petite</a></li>
-                                    <li><a href="#"> New In Tall</a></li>
-                                    <li><a href="#">New In Maternity</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="sub-menu">
-                                <p>OFFERS</p>
-                                <ul>
-                                    <li><a href="#">
-                                            <p> App Exclusive - Free Shipping Over $50!*</p>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <p>App Exclusive - Free Shipping Over $50!* </p>
-                                        </a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li class="menu-bar1"><a href="#" class="menu-bar11"><a href="#">ALL CLOTHING</a>
-                            <ul class="menu1">
-                                <li class="sub-menu">
-                                    <p> ALL CLOTHING</p>
-                                    <ul>
-                                        <li><a href="#">New In</a></li>
-                                        <li><a href="#"> Two Piece Sets</a></li>
-                                        <li><a href="#">Tops</a></li>
-                                        <li><a href="#">Dresses</a></li>
-                                        <li><a href="#">Knitwear</a></li>
-                                        <li><a href="#">Hoodies & Sweatshirts</a></li>
-                                        <li><a href="#">Athleisure</a></li>
-                                        <li><a href="#">Sweatpants</a></li>
-                                        <li><a href="#">Tracksuits</a></li>
-                                        <li><a href="#">Loungewear</a></li>
-                                        <li><a href="#">Sweaters & Cardigans</a></li>
-                                        <li><a href="#">Sweatpants</a></li>
-                                        <li><a href="#">Tracksuits</a></li>
-                                        <li><a href="#">Loungewear</a></li>
-                                        <li><a href="#">Sweaters & Cardigans</a></li>
-
-                                    </ul>
-                                </li>
-                                <li class="sub-menu">
-                                    <p> SHOP BY TREND</p>
-                                    <ul>
-                                        <li><a href="#">Resort Wear</a></li>
-                                        <li><a href="#">Spring Break Outfits</a></li>
-                                        <li><a href="#">Matching Sets</a></li>
-                                        <li><a href="#">Office Clothes</a></li>
-                                        <li><a href="#">Cargo Pants</a></li>
-                                        <li><a href="#">Wide Leg Jeans</a></li>
-                                        <li><a href="#">Cargos and a Corset</a></li>
-                                    </ul>
-                                </li>
-                                <li class="sub-menu">
-                                    <p> SHOP BY OCCASION</p>
-                                    <ul>
-                                        <li><a href="#">Date Outfits</a></li>
-                                        <li><a href="#">Wedding Guest Dresses</a></li>
-
-                                    </ul>
-                                </li>
-                                <li class="sub-menu">
-                                    <p>OFFERS</p>
-                                    <ul>
-                                        <li><a href="#">
-                                                <p> App Exclusive - Free Shipping Over $50!*</p>
-                                            </a></li>
-                                        <li><a href="#">
-                                                <p>App Exclusive - Free Shipping Over $50!* </p>
-                                            </a></li>
-                                    </ul>
-                                </li>
-
+               <div class="menu-bar">
+                <c:forEach items="${requestScope.listC}" var="c">
+                <li class="menu-bar1"><a href="category?cid=${c.cid}" class="menu-bar11">${c.cname}</a>
+                    <ul class="menu1">
+                        <li class="sub-menu">
+                            <p> NEW IN</p>
+                            <ul>
+                                <li><a href="category?cid=${c.cid}">${c.cname}</a></li>
+                                <li><a href="#"> New In Clothing</a></li>
+                                <li><a href="#">New In Dresses</a></li>
+                                <li><a href="#"> New In Accessories</a></li>
+                                <li><a href="#">New In Beauty</a></li>
+                                <li><a href="#">Just Landed Today</a></li>
+                                <li><a href="#">Just Landed</a></li>
+                                <li><a href="#">Bestsellers</a></li>
                             </ul>
-                    </li>
-                    <li class="menu-bar1"><a href="#">PLUS SIZE CLOTHING</a>
-                        <ul class="menu1">
-                            <li class="sub-menu">
-                                <p>PLUS SIZE & CURVE</p>
-                                <ul>
-                                    <li><a href="#">View All</a></li>
-                                    <li><a href="#"> Plus Size New In</a></li>
-                                    <li><a href="#">Plus Size Coats & Jackets</a></li>
-                                    <li><a href="#">Plus Size Sweaters & Cardigans</a></li>
-                                    <li><a href="#">Plus Size Pants</a></li>
-                                    <li><a href="#">Plus Size Jeans</a></li>
-                                    <li><a href="#">Plus Size Occasionwear</a></li>
-                                    <li><a href="#">Plus Size Sweatpants</a></li>
-                                    <li><a href="#">Plus Size Tracksuits</a></li>
-                                    <li><a href="#">Plus Size Loungewear</a></li>
+                        </li>
+                        <li class="sub-menu">
+                            <p> NEW IN BY FIGURE</p>
+                            <ul>
+                                <li><a href="#">New In Plus & Curve</a></li>
+                                <li><a href="#">New In Petite</a></li>
+                                <li><a href="#"> New In Tall</a></li>
+                                <li><a href="#">New In Maternity</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="sub-menu">
+                            <p>OFFERS</p>
+                            <ul>
+                                <li><a href="#">
+                                        <p> App Exclusive - Free Shipping Over $50!*</p>
+                                    </a></li>
+                                <li><a href="#">
+                                        <p>App Exclusive - Free Shipping Over $50!* </p>
+                                    </a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
 
 
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p> PLUS SIZE BY OCCASION</p>
-                                <ul>
-                                    <li><a href="#">Plus Size Resort Wear</a></li>
-                                    <li><a href="#">Plus Size Spring Break Outfits</a></li>
-                                    <li><a href="#">Plus Size Matching Sets</a></li>
-                                    <li><a href="#">Plus Size Office Clothes</a></li>
-                                    <li><a href="#">Plus Size Cargo Pants</a></li>
-                                    <li><a href="#">Plus Size Wide Leg Jeans</a></li>
-                                    <li><a href="#">Plus Size Cargos and a Corset</a></li>
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p> PLUS SIZE BY OCCASION</p>
-                                <ul>
-                                    <li><a href="#">Plus Size Date Outfits</a></li>
-                                    <li><a href="#">Plus Size Going Out Outfits</a></li>
-                                    <li><a href="#">All Plus Size Occasion Wear</a></li>
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p>OFFERS</p>
-                                <ul>
-                                    <li><a href="#">
-                                            <p> Refer A Friend For Exclusives Deals!</p>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <p>App Exclusive - Free Shipping Over $50!* </p>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <p>Get Exclusive Student Discount </p>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <p>App Exclusive - Free Shipping Over $50!* </p>
-                                        </a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li class="menu-bar1"><a href="#">TOPS</a>
-                        <ul class="menu1">
-                            <li class="sub-menu">
-                                <p> TOPS</p>
-                                <ul>
-                                    <li><a href="#">New In</a></li>
-                                    <li><a href="#"> Two Piece Sets</a></li>
-                                    <li><a href="#">Tops</a></li>
-                                    <li><a href="#">Dresses</a></li>
-                                    <li><a href="#">Knitwear</a></li>
-                                    <li><a href="#">Hoodies & Sweatshirts</a></li>
-                                    <li><a href="#">Athleisure</a></li>
-                                    <li><a href="#">Sweatpants</a></li>
-                                    <li><a href="#">Tracksuits</a></li>
-                                    <li><a href="#">Loungewear</a></li>
-                                    <li><a href="#">Sweaters & Cardigans</a></li>
-
-
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p> TOPS BY FIGURE</p>
-                                <ul>
-                                    <li><a href="#">Resort Wear</a></li>
-                                    <li><a href="#">Spring Break Outfits</a></li>
-                                    <li><a href="#">Matching Sets</a></li>
-                                    <li><a href="#">Office Clothes</a></li>
-                                    <li><a href="#">Cargo Pants</a></li>
-                                    <li><a href="#">Wide Leg Jeans</a></li>
-                                    <li><a href="#">Cargos and a Corset</a></li>
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p> TOPS BY TREND</p>
-                                <ul>
-                                    <li><a href="#">Date Outfits</a></li>
-                                    <li><a href="#">Wedding Guest Dresses</a></li>
-
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p>OFFERS</p>
-                                <ul>
-                                    <li><a href="#">
-                                            <p> App Exclusive - Free Shipping Over $50!*</p>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <p>App Exclusive - Free Shipping Over $50!* </p>
-                                        </a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class="menu-bar1"><a href="#">SPRING</a>
-                        <ul class="menu1">
-                            <li class="sub-menu">
-                                <p> ALL CLOTHING</p>
-                                <ul>
-                                    <li><a href="#">New In</a></li>
-                                    <li><a href="#"> Two Piece Sets</a></li>
-                                    <li><a href="#">Tops</a></li>
-                                    <li><a href="#">Dresses</a></li>
-                                    <li><a href="#">Knitwear</a></li>
-                                    <li><a href="#">Hoodies & Sweatshirts</a></li>
-                                    <li><a href="#">Athleisure</a></li>
-                                    <li><a href="#">Sweatpants</a></li>
-                                    <li><a href="#">Tracksuits</a></li>
-                                    <li><a href="#">Loungewear</a></li>
-                                    <li><a href="#">Sweaters & Cardigans</a></li>
-                                    <li><a href="#">Sweatpants</a></li>
-                                    <li><a href="#">Tracksuits</a></li>
-                                    <li><a href="#">Loungewear</a></li>
-                                    <li><a href="#">Sweaters & Cardigans</a></li>
-
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p> SHOP BY TREND</p>
-                                <ul>
-                                    <li><a href="#">Resort Wear</a></li>
-                                    <li><a href="#">Spring Break Outfits</a></li>
-                                    <li><a href="#">Matching Sets</a></li>
-                                    <li><a href="#">Office Clothes</a></li>
-                                    <li><a href="#">Cargo Pants</a></li>
-                                    <li><a href="#">Wide Leg Jeans</a></li>
-                                    <li><a href="#">Cargos and a Corset</a></li>
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p> SHOP BY OCCASION</p>
-                                <ul>
-                                    <li><a href="#">Date Outfits</a></li>
-                                    <li><a href="#">Wedding Guest Dresses</a></li>
-
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p>OFFERS</p>
-                                <ul>
-                                    <li><a href="#">
-                                            <p> App Exclusive - Free Shipping Over $50!*</p>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <p>App Exclusive - Free Shipping Over $50!* </p>
-                                        </a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class="menu-bar1"><a href="#">OCCASION WEAR</a>
-                        <ul class="menu1">
-                            <li class="sub-menu">
-                                <p> ALL CLOTHING</p>
-                                <ul>
-                                    <li><a href="#">New In</a></li>
-                                    <li><a href="#"> Two Piece Sets</a></li>
-                                    <li><a href="#">Tops</a></li>
-                                    <li><a href="#">Dresses</a></li>
-                                    <li><a href="#">Knitwear</a></li>
-                                    <li><a href="#">Hoodies & Sweatshirts</a></li>
-                                    <li><a href="#">Athleisure</a></li>
-                                    <li><a href="#">Sweatpants</a></li>
-                                    <li><a href="#">Tracksuits</a></li>
-                                    <li><a href="#">Loungewear</a></li>
-                                    <li><a href="#">Sweaters & Cardigans</a></li>
-                                    <li><a href="#">Sweatpants</a></li>
-                                    <li><a href="#">Tracksuits</a></li>
-                                    <li><a href="#">Loungewear</a></li>
-                                    <li><a href="#">Sweaters & Cardigans</a></li>
-
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p> SHOP BY TREND</p>
-                                <ul>
-                                    <li><a href="#">Resort Wear</a></li>
-                                    <li><a href="#">Spring Break Outfits</a></li>
-                                    <li><a href="#">Matching Sets</a></li>
-                                    <li><a href="#">Office Clothes</a></li>
-                                    <li><a href="#">Cargo Pants</a></li>
-                                    <li><a href="#">Wide Leg Jeans</a></li>
-                                    <li><a href="#">Cargos and a Corset</a></li>
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p> SHOP BY OCCASION</p>
-                                <ul>
-                                    <li><a href="#">Date Outfits</a></li>
-                                    <li><a href="#">Wedding Guest Dresses</a></li>
-
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p>OFFERS</p>
-                                <ul>
-                                    <li><a href="#">
-                                            <p> App Exclusive - Free Shipping Over $50!*</p>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <p>App Exclusive - Free Shipping Over $50!* </p>
-                                        </a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class="menu-bar1"><a href="#">FESTIVAL OUTFITS</a>
-                        <ul class="menu1">
-                            <li class="sub-menu">
-                                <p> ALL CLOTHING</p>
-                                <ul>
-                                    <li><a href="#">New In</a></li>
-                                    <li><a href="#"> Two Piece Sets</a></li>
-                                    <li><a href="#">Tops</a></li>
-                                    <li><a href="#">Dresses</a></li>
-                                    <li><a href="#">Knitwear</a></li>
-                                    <li><a href="#">Hoodies & Sweatshirts</a></li>
-                                    <li><a href="#">Athleisure</a></li>
-                                    <li><a href="#">Sweatpants</a></li>
-                                    <li><a href="#">Tracksuits</a></li>
-                                    <li><a href="#">Loungewear</a></li>
-                                    <li><a href="#">Sweaters & Cardigans</a></li>
-                                    <li><a href="#">Sweatpants</a></li>
-                                    <li><a href="#">Tracksuits</a></li>
-                                    <li><a href="#">Loungewear</a></li>
-                                    <li><a href="#">Sweaters & Cardigans</a></li>
-
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p> SHOP BY TREND</p>
-                                <ul>
-                                    <li><a href="#">Resort Wear</a></li>
-                                    <li><a href="#">Spring Break Outfits</a></li>
-                                    <li><a href="#">Matching Sets</a></li>
-                                    <li><a href="#">Office Clothes</a></li>
-                                    <li><a href="#">Cargo Pants</a></li>
-                                    <li><a href="#">Wide Leg Jeans</a></li>
-                                    <li><a href="#">Cargos and a Corset</a></li>
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p> SHOP BY OCCASION</p>
-                                <ul>
-                                    <li><a href="#">Date Outfits</a></li>
-                                    <li><a href="#">Wedding Guest Dresses</a></li>
-
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p>OFFERS</p>
-                                <ul>
-                                    <li><a href="#">
-                                            <p> App Exclusive - Free Shipping Over $50!*</p>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <p>App Exclusive - Free Shipping Over $50!* </p>
-                                        </a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class="menu-bar1"><a href="#">SHOP BY FIT</a>
-                        <ul class="menu1">
-                            <li class="sub-menu">
-                                <p> ALL CLOTHING</p>
-                                <ul>
-                                    <li><a href="#">New In</a></li>
-                                    <li><a href="#"> Two Piece Sets</a></li>
-                                    <li><a href="#">Tops</a></li>
-                                    <li><a href="#">Dresses</a></li>
-                                    <li><a href="#">Knitwear</a></li>
-                                    <li><a href="#">Hoodies & Sweatshirts</a></li>
-                                    <li><a href="#">Athleisure</a></li>
-                                    <li><a href="#">Sweatpants</a></li>
-                                    <li><a href="#">Tracksuits</a></li>
-                                    <li><a href="#">Loungewear</a></li>
-                                    <li><a href="#">Sweaters & Cardigans</a></li>
-                                    <li><a href="#">Sweatpants</a></li>
-                                    <li><a href="#">Tracksuits</a></li>
-                                    <li><a href="#">Loungewear</a></li>
-                                    <li><a href="#">Sweaters & Cardigans</a></li>
-
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p> SHOP BY TREND</p>
-                                <ul>
-                                    <li><a href="#">Resort Wear</a></li>
-                                    <li><a href="#">Spring Break Outfits</a></li>
-                                    <li><a href="#">Matching Sets</a></li>
-                                    <li><a href="#">Office Clothes</a></li>
-                                    <li><a href="#">Cargo Pants</a></li>
-                                    <li><a href="#">Wide Leg Jeans</a></li>
-                                    <li><a href="#">Cargos and a Corset</a></li>
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p> SHOP BY OCCASION</p>
-                                <ul>
-                                    <li><a href="#">Date Outfits</a></li>
-                                    <li><a href="#">Wedding Guest Dresses</a></li>
-
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p>OFFERS</p>
-                                <ul>
-                                    <li><a href="#">
-                                            <p> App Exclusive - Free Shipping Over $50!*</p>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <p>App Exclusive - Free Shipping Over $50!* </p>
-                                        </a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class="menu-bar1"><a href="#">SALE</a>
-                        <ul class="menu1">
-                            <li class="sub-menu">
-                                <p> SALE</p>
-                                <ul>
-
-                                    <li><a href="#">Tops</a></li>
-                                    <li><a href="#">Dresses</a></li>
-                                    <li><a href="#">Knitwear</a></li>
-                                    <li><a href="#">Hoodies & Sweatshirts</a></li>
-                                    <li><a href="#">Athleisure</a></li>
-                                    <li><a href="#">Sweatpants</a></li>
-                                    <li><a href="#">Tracksuits</a></li>
-                                    <li><a href="#">Loungewear</a></li>
-                                    <li><a href="#">Sweaters & Cardigans</a></li>
-                                    <li><a href="#">Sweatpants</a></li>
-
-                                    <li><a href="#">Sweaters & Cardigans</a></li>
-
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p>SALE BY FIGURE</p>
-                                <ul>
-                                    <li><a href="#">Tracksuits</a></li>
-                                    <li><a href="#">Loungewear</a></li>
-                                    <li><a href="#">Matching Sets</a></li>
-                                    <li><a href="#">Office Clothes</a></li>
-                                    <li><a href="#">Cargo Pants</a></li>
-                                    <li><a href="#">Wide Leg Jeans</a></li>
-                                    <li><a href="#">Cargos and a Corset</a></li>
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p> SUPER SALE</p>
-                                <ul>
-                                    <li><a href="#">Date Outfits</a></li>
-                                    <li><a href="#">Wedding Guest Dresses</a></li>
-                                    <li><a href="#">Sweatpants</a></li>
-                                    <li><a href="#">Tracksuits</a></li>
-                                    <li><a href="#">Loungewear</a></li>
-                                    <li><a href="#">Sweaters & Cardigans</a></li>
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <p>OFFERS</p>
-                                <ul>
-                                    <li><a href="#">
-                                            <p> App Exclusive - Free Shipping Over $50!*</p>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <p>App Exclusive - Free Shipping Over $50!* </p>
-                                        </a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-                </div>
+                </c:forEach>
+            </div>
             </div>
 
 
@@ -882,9 +429,9 @@
                         </div>
                         <div class="product-content-right-size">
                             <span>${p.size}</span>
-<!--                            <span>${p.size2}</span>
-                            <span>${p.size3}</span>
-                            <span>${p.size4}</span>-->
+<!--                            <span>${p.size}</span>
+                            <span>${p.size}</span>
+                            <span>${p.size}</span>-->
 
                         </div>
                         <div class="product-content-right-quantity">
@@ -984,10 +531,11 @@
 
 
                 </div>
+                            <br> <br> <br> <br> <br> 
                 <script src="./product_js.js"></script>
                 <footer>
 
-                    <div class="footerset">
+                    <div class="footerset" style="  border-top:solid 1px #ddd; ">
                         <strong>CLASS ACTION SETTLEMENT; CHECK YOUR EMAIL FOR $10 GIFT CARDS PLUS COMPLIMENTARY SHIPPING ON
                             ANY
                             PURCHASE. CLICK HERE FOR ADDITIONAL INFORMATION:</strong><br>

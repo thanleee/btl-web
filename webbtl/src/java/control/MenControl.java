@@ -6,6 +6,7 @@
 package control;
 
 import dal.DAO;
+import dal.DAOCategory;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -14,6 +15,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.List;
+import model.Category;
 import model.Product;
 
 /**
@@ -59,8 +61,11 @@ public class MenControl extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         DAO p = new DAO();
+        DAOCategory c= new DAOCategory();
         List<Product>list = p.getAllMen();
+        List<Category> listC = c.getAllCategory();
         request.setAttribute("pr", list);
+        request.setAttribute("listC", listC);
         request.getRequestDispatcher("men1.jsp").forward(request, response);
     } 
 

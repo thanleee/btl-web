@@ -14,33 +14,27 @@ public class Product {
     private String name;
     private String image;
     private double price;
-    private String title;
     private String describe;
-    private double pricesale;
     private String color;
     private String size;
-    private String size2;
-    private String size3;
-    private String size4;
     private String image2;
+    private int cateid;
+    private int sellid;
 
     public Product() {
     }
 
-    public Product(int id, String name, String image, double price, String title, String describe, double pricesale, String color, String size, String size2, String size3, String size4, String image2) {
+    public Product(int id, String name, String image, double price, String describe, String color, String size, String image2, int cateid, int sellid) {
         this.id = id;
         this.name = name;
         this.image = image;
         this.price = price;
-        this.title = title;
         this.describe = describe;
-        this.pricesale = pricesale;
         this.color = color;
         this.size = size;
-        this.size2 = size2;
-        this.size3 = size3;
-        this.size4 = size4;
         this.image2 = image2;
+        this.cateid = cateid;
+        this.sellid = sellid;
     }
 
     public int getId() {
@@ -75,28 +69,12 @@ public class Product {
         this.price = price;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getDescribe() {
         return describe;
     }
 
     public void setDescribe(String describe) {
         this.describe = describe;
-    }
-
-    public double getPricesale() {
-        return pricesale;
-    }
-
-    public void setPricesale(double pricesale) {
-        this.pricesale = pricesale;
     }
 
     public String getColor() {
@@ -115,30 +93,6 @@ public class Product {
         this.size = size;
     }
 
-    public String getSize2() {
-        return size2;
-    }
-
-    public void setSize2(String size2) {
-        this.size2 = size2;
-    }
-
-    public String getSize3() {
-        return size3;
-    }
-
-    public void setSize3(String size3) {
-        this.size3 = size3;
-    }
-
-    public String getSize4() {
-        return size4;
-    }
-
-    public void setSize4(String size4) {
-        this.size4 = size4;
-    }
-
     public String getImage2() {
         return image2;
     }
@@ -147,11 +101,28 @@ public class Product {
         this.image2 = image2;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" + "id=" + id + ", name=" + name + ", image=" + image + ", price=" + price + ", title=" + title + ", describe=" + describe + ", pricesale=" + pricesale + ", color=" + color + ", size=" + size + ", size2=" + size2 + ", size3=" + size3 + ", size4=" + size4 + ", image2=" + image2 + '}';
+    public int getCateid() {
+        return cateid;
     }
 
+    public void setCateid(int cateid) {
+        this.cateid = cateid;
+    }
+
+    public int getSellid() {
+        return sellid;
+    }
+
+    public void setSellid(int sellid) {
+        this.sellid = sellid;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" + "id=" + id + ", name=" + name + ", image=" + image + ", price=" + price + ", describe=" + describe + ", color=" + color + ", size=" + size + ", image2=" + image2 + ", cateid=" + cateid + ", sellid=" + sellid + '}';
+    }
+ 
+  
 
     
 }

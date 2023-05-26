@@ -6,7 +6,6 @@
 package control;
 
 import dal.DAO;
-import dal.DAOCategory;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -15,15 +14,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.List;
-import model.Category;
 import model.Product;
 
 /**
  *
  * @author DELL
  */
-@WebServlet(name="WomenControl", urlPatterns={"/women"})
-public class WomenControl extends HttpServlet {
+@WebServlet(name="LoadMoreControll", urlPatterns={"/load"})
+public class LoadMoreControll extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -40,10 +38,10 @@ public class WomenControl extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet WomenControl</title>");  
+            out.println("<title>Servlet LoadMoreControll</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet WomenControl at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet LoadMoreControll at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -60,17 +58,48 @@ public class WomenControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        DAO p = new DAO();
-        DAOCategory c= new DAOCategory();
-        List<Product>list = p.getTop4();
-        List<Category> listC = c.getAllCategory();
-        int count = p.countAllProdunt();
-        request.setAttribute("count", count);
-        request.setAttribute("pr", list);
-        request.setAttribute("listC", listC);
-        request.getRequestDispatcher("women1.jsp").forward(request, response);
+        String amount = request.getParameter("exits");
+        int iamount= Integer.parseInt(amount);
+        DAO dao = new DAO();
+        List<Product> list = dao.getNext4Product(iamount);
+        PrintWriter out = response.getWriter();
         
-    
+        for(Product o : list){
+            out.println("  <div class=\"product\">\n" +
+"                            <div class=\"product-image\">\n" +
+"                                <a href=\"product?id="+o.getId()+"\"><img src=\""+o.getImage()+"\" style=\"max-width: 100%;\"></img></a>\n" +
+"                                <a href=\"product?id="+o.getId()+"\">\n" +
+"                                    <div class=\"quick-view\">\n" +
+"                                        Quick view\n" +
+"                                    </div>\n" +
+"                                </a>\n" +
+"                                <div class=\"icon-heart\">\n" +
+"                                    <img src=\"./img1/icon-heart.png\" alt=\"save for later\" title=\"save for later\"\n" +
+"                                         style=\"max-width: 100%;\">\n" +
+"                                </div>\n" +
+"\n" +
+"                            </div>\n" +
+"                            <div class=\"product-description\">\n" +
+"                                <a href=\"product?id="+o.getId()+"\">\n" +
+"                                    <div class=\"product-name\">\n" +
+"                                        "+o.getName()+"\n" +
+"                                    </div>\n" +
+"                                </a>\n" +
+"                                <div class=\"product-price\">\n" +
+"                                    <div class=\"price\">\n" +
+"                                        <span class=\"price-after-reduce\">$"+o.getPrice()+"</span>\n" +
+"                                        \n" +
+"                                    </div>\n" +
+"<!--                                    <div class=\"precent-reduce\">\n" +
+"                                        % OFF\n" +
+"                                    </div>-->\n" +
+"                                </div>\n" +
+"                                <div class=\"product-color\">\n" +
+"                                    <div class=\"block-color\" style=\"background: "+o.getColor()+";\"></div>\n" +
+"                                </div>\n" +
+"                            </div>\n" +
+"                        </div>");
+        }
     } 
 
     /** 

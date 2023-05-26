@@ -3,6 +3,7 @@ package control;
 import java.io.IOException;
 
 import dal.*;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -38,15 +39,25 @@ public class signupServlet extends HttpServlet {
 		String cfpassword = request.getParameter("cfpassword") ; 
 		String fname = request.getParameter("fname") ; 
 		String lname = request.getParameter("lname") ; 
+                
 		
-		
-		User u = new User(phone, email, password, cfpassword, fname, lname) ; 
+		if (password.length() >= 8 && password.equals(cfpassword)) {
+
+		User u = new User(phone, email, password, cfpassword, fname, lname,0) ; 
 		if(new UserDao().themTaiKhoan(u)) {
 
 			response.sendRedirect("women");
 		} else {
-			System.out.println("Loi dang ki");
+			request.setAttribute("error2", "Loi dang ki");
+                    RequestDispatcher rd = request.getRequestDispatcher("dangki.jsp");
+				   rd.forward(request, response);
 		}
+                }
+                else{
+                     request.setAttribute("error1", "Loi dang ki: Password khong hop le hoac khong trung khop");
+                    RequestDispatcher rd = request.getRequestDispatcher("dangki.jsp");
+				   rd.forward(request, response);
+                }
 	}
     @Override
     protected void doPost(HttpServletRequest request,

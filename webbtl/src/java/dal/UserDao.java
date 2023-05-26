@@ -1,18 +1,25 @@
 package dal;
 
 
-import java.sql.ResultSet;
 
-import dal.DBConnect;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
 import model.User;
 
-public class UserDao implements ObjectDAO {
 
-	@Override
+public class UserDao extends DBContext{
+
 	public boolean themTaiKhoan(Object obj) {
 		User u = (User) obj ; 
+                String sql ="insert into sign_up (phone,email,password,cfpassword,fname,lname,mid) values('"+u.getPhone()+"','"+u.getEmail()+"','"+u.getPassword()+"','"+u.getCfpassword()+"','"+u.getFname()+"','"+u.getLname()+"',0)";
 		try {
-			new DBConnect().thucThiSQL("insert into sign_up (phone,email,password,cfpassword,fname,lname) values('"+u.getPhone()+"','"+u.getEmail()+"','"+u.getPassword()+"','"+u.getCfpassword()+"','"+u.getFname()+"','"+u.getLname()+"')");
+			 
+			Statement stmt = connection.createStatement() ;
+			stmt.executeUpdate(sql) ;
 		
 			return true ; 
 			
@@ -24,8 +31,11 @@ public class UserDao implements ObjectDAO {
 	}
 
 	public User layThongTinTaiKhoan(String email) {
-		try {
-			ResultSet rs= new DBConnect().ChonDuLieu("select * from sign_up where email='"+email+"'");
+            String sql= "select * from sign_up where email='"+email+"'";
+		try {   
+			PreparedStatement ps = connection.prepareStatement(sql);
+                        Statement stmtStatement = connection.createStatement() ; 
+			ResultSet rs = stmtStatement.executeQuery(sql) ; 
 			while(rs.next()) {
 				String phone = rs.getString(1) ;
 				String email1 = rs.getString(2) ; 
@@ -33,8 +43,9 @@ public class UserDao implements ObjectDAO {
 				String cfpassword = rs.getString(4) ; 
 				String fname = rs.getString(5) ; 
 				String lname = rs.getString(6) ; 
+                                int mid = rs.getInt(7) ;
 			
-				return new User(phone,email1,password,cfpassword,fname,lname) ; 
+				return new User(phone,email1,password,cfpassword,fname,lname,mid) ; 
 				
 			}
 		} catch (Exception e) {
@@ -45,12 +56,13 @@ public class UserDao implements ObjectDAO {
 		return null ; 
 	}
 	
-	@Override
 	public boolean kiemTraDangNhap(String email , String password) {
-		
+		String sql="select * from sign_up where email='"+email+"'";
 		try {
+			PreparedStatement ps = connection.prepareStatement(sql);
+                        Statement stmtStatement = connection.createStatement() ; 
+			ResultSet rs = stmtStatement.executeQuery(sql) ;
 			
-			ResultSet rs= new DBConnect().ChonDuLieu("select * from sign_up where email='"+email+"'");
 			while(rs.next()) {
 				if(rs.getString(2).equals(email) && rs.getString(3).equals(password)) {
 					return true  ; 
@@ -66,7 +78,7 @@ public class UserDao implements ObjectDAO {
 	}
 
 	public static void main(String[] args) {
-		User users = new User("14", "tie.com", "13", "123", "tien", "dona") ; 
+		User users = new User("14", "tie.com", "13", "123", "tien", "dona",0) ; 
 //		System.out.println(new UserDao().themTaiKhoan(users)) ; 
 //		System.out.println(new UserDao().kiemTraDangNhap("tie.com")) ; 
 	}
