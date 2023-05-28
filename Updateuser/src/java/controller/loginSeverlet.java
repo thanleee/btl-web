@@ -6,6 +6,7 @@
 package controller;
 
 import dao.UserDAO;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -13,12 +14,17 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import model.UserModel;
 
-
-@WebServlet(name="UpdateUser", urlPatterns={"/update"})
-public class UpdateUser extends HttpServlet {
-
+/**
+ *
+ * @author ADMIN
+ */
+@WebServlet(name="loginSeverlet", urlPatterns={"/login"})
+public class loginSeverlet extends HttpServlet {
+   
+ 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -27,46 +33,46 @@ public class UpdateUser extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UpdateUser</title>");  
+            out.println("<title>Servlet loginSeverlet</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet UpdateUser at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet loginSeverlet at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     } 
 
-
+  
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String phone =  request.getParameter("phone") ; 
-        UserDAO dao = new UserDAO() ; 
-        UserModel u = dao.getUserByPhone(phone) ; 
-        request.setAttribute("um", u);
-        request.getRequestDispatcher("Update.jsp").forward(request, response);
-        
+        String email = request.getParameter("email") ; 
+		String password = request.getParameter("password") ; 
+		if(new UserDAO().kiemTraDangNhap(email,password)) {
+//		            redirectToPage(request, response, "load");
+                            response.sendRedirect("load");
+//                            request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
+		else {
+                    response.sendRedirect("login.jsp");
+		}
     } 
 
-  
+ 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String uphone  = request.getParameter("phone") ; 
-        String uemail  = request.getParameter("email") ;
-        String upassword  = request.getParameter("password") ;
-        String ucfpassword  = request.getParameter("cfpassword") ;
-        String ufname  = request.getParameter("fname") ;
-        String ulname  = request.getParameter("lname") ;
-        String umid  = request.getParameter("mid") ;
-        UserDAO dao = new UserDAO() ; 
-        dao.updateUser(uphone, uemail, upassword, ucfpassword, ulname, ufname, umid);
-       response.sendRedirect("load");
+        doGet(request, response);
     }
 
+   
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private void redirectToPage(HttpServletRequest request, HttpServletResponse response, String load) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 }

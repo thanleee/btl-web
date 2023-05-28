@@ -14,27 +14,27 @@
 	<h1>Update User</h1>
     
     
-    <form action="update" method="post" enctype="multipart/form-data">
+    <form action="update" method="post" >
     
-    	<label for="name">Phone:</label>
+    	<label for="phone">Phone:</label>
         <input type="text" id="phone" name="phone" value="${um.phone}" readonly><br><br>
         
-        <label for="name">Email:</label>
+        <label for="email">Email:</label>
         <input type="text" id="email" name="email" value="${um.email}"><br><br>
         
-        <label for="name">Password:</label>
+        <label for="password">Password:</label>
         <input type="text" id="password" name="password" value="${um.password}"><br><br>
         
-        <label for="name">Cfpassword:</label>
+        <label for="cfpassword">Cfpassword:</label>
         <input type="text" id="cfpassword" name="cfpassword" value="${um.cfpassword}"><br><br>
         
-        <label for="name">Fname:</label>
+        <label for="fname">Fname:</label>
         <input type="text" id="fname" name="fname" value="${um.fname}"><br><br>
         
-        <label for="name">Lname:</label>
+        <label for="lname">Lname:</label>
         <input type="text" id="lname" name="lname" value="${um.lname}"><br><br>
         
-        <label for="name">Mid:</label>
+        <label for="mid">Mid:</label>
         <input type="text" id="mid" name="mid" value="${um.mid}"><br><br>
         
 
