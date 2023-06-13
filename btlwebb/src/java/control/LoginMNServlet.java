@@ -5,6 +5,7 @@
 
 package control;
 
+import dal.MaHoa;
 import dal.UserDAOMN;
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
@@ -48,9 +49,10 @@ public class LoginMNServlet extends HttpServlet {
     throws ServletException, IOException {
         String email = request.getParameter("email") ; 
 		String password = request.getParameter("password") ; 
+                password = MaHoa.toSHA1(password) ;
 		if(new UserDAOMN().kiemTraDangNhap(email,password)) {
 //		            redirectToPage(request, response, "load");
-                            response.sendRedirect("loadus");
+                            response.sendRedirect("thongke");
 //                            request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 		else {

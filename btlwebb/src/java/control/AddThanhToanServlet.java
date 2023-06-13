@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package controller;
+package control;
 
 import dal.PaymentDAO;
 import java.io.IOException;
@@ -63,15 +63,16 @@ public class AddThanhToanServlet extends HttpServlet {
     String address = request.getParameter("address");
     String[] products = request.getParameterValues("products"); // Lấy danh sách sản phẩm
     String total = request.getParameter("total");
+    String date = request.getParameter("date");
     
     PaymentDAO paymentDAO = new PaymentDAO();
     
     try {
        
-            Payment newPayment = new Payment(0,name, email, phone, address, Arrays.asList(products), total,"Chờ xác nhận");
+            Payment newPayment = new Payment(0,name, email, phone, address, Arrays.asList(products), total,date,"Chờ xác nhận");
             paymentDAO.insert(newPayment);
-            response.sendRedirect("women");
-        
+            response.sendRedirect("oderhistory?phone=" + phone);
+           
     } catch (NumberFormatException e) {
         System.out.println(e);
     }

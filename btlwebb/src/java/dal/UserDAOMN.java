@@ -11,7 +11,7 @@ import model.User;
 
 public class UserDAOMN {
 	public static ArrayList<User> getUsers() {
-		
+		// láº¥y dá»¯ liá»‡u tá»« db 
 		Connection conn = DBConnection.getJDBCConnection();
 		ArrayList<User> users = new ArrayList<>(); 
 		String sql ="select * from btlweb.sign_up";
@@ -101,6 +101,36 @@ public class UserDAOMN {
 		}catch (Exception e) {
 			
 			
+		}
+	}
+        	public static void changeUser(String phone, String email , String lname , String fname ){ 
+		Connection conn = DBConnection.getJDBCConnection();
+		String sql = "update btlweb.sign_up set email=? , fname=? , lname= ? where phone = ? " ;
+                try {
+			
+			PreparedStatement ps = conn.prepareStatement(sql) ;
+                        ps.setString(1, email);
+//			ps.setString(2, password);
+//                        ps.setString(3, cfpassword);
+                        ps.setString(2, fname);
+                        ps.setString(3, lname);
+//                        ps.setString(6, mid);
+                        ps.setString(4, phone);
+                        ps.executeUpdate() ; 
+		}catch (SQLException e) {	
+		}
+                }
+                public static void changePass(String phone, String password , String cfpassword ){ 
+		Connection conn = DBConnection.getJDBCConnection();
+		String sql = "update btlweb.sign_up set password=? , cfpassword=?  where phone = ?" ;
+                try {
+			
+			PreparedStatement ps = conn.prepareStatement(sql) ;
+                        ps.setString(1, password);
+                        ps.setString(2, cfpassword);
+                        ps.setString(3, phone);
+                        ps.executeUpdate() ; 
+		}catch (SQLException e) {	
 		}
 	}
 //		public User layThongTinTaiKhoan(String email) {

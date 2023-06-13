@@ -1,7 +1,6 @@
 <%@page import="dal.ProductDAO"%>
 <%@page import="model.Product"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+<%@ page pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +10,12 @@
 	<link rel="stylesheet" href="style-index.css">
         <link rel="icon" href="./accest/img/logoboohoo.png">
 	<title>Product Management</title>
+        
 </head>
-<body>
-	<a href="add-product.jsp" class="button add-button">Add</a>
+<body style="background-color: #f8f8f8;  ">  
+     <%@ include file="headerAdmin.jsp" %>
+     
+     <a href="add-product.jsp" class="button add-button" style=" margin-top: 15px; margin-bottom: 0;">Add</a>
 	<table class="product-table">
 		<thead>
 			<tr>
@@ -39,7 +41,7 @@
 					<td><%=item.getId() %></td>
 					<td><%=item.getName() %></td>
 					<td><%=item.getPrice() %></td>
-					<td><img src="img1/<%=item.getImage() %>" ></td>
+					<td><img src="img/<%=item.getImage() %>" ></td>
 					
 					<td><%=item.getDescription() %></td>
 					
@@ -71,6 +73,8 @@
 				console.log("Huỷ");
 			}
 		});
+                
 	</script>
+        
 </body>
 </html>

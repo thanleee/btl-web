@@ -28,7 +28,7 @@
     <header>
     
         <div class="row">
-            <div class="adv">
+            <div class="adv" style="background-color: #ff7bbb">
                 <div class="ani">
                     <div class="ani1">
                         <a href="https://us.boohoo.com/womens/promo/flash-sale-2?home_primarysplash_flash-sale-2">
@@ -263,7 +263,7 @@
                     <li> <a href="#" id="viewcart"><span class="material-symbols-outlined">
                                 shopping_bag
                             </span></a>
-                        <div class="containcart" id="containcart">
+<!--                        <div class="containcart" id="containcart">
                             <div class="container-cart">
                                 <div class="viewcart">
                                     <div class="header">
@@ -348,7 +348,7 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </li>
 
 
@@ -913,20 +913,20 @@
                         <div class="signup__body-password">
                             <label for="pass1" class="signup__body-password-text text--form">Password</label>
                             <div class="signup__body-password-input input__show">
-                                <input id="pass1" name="password" required="yes" type="password" class="signup__body-password-input input">
-                                <div class="signup__body-password-input--show input-a">
-                                    <a href="" class="input__pass-show show">Show</a>
-                                </div>
+                                <input id="passwordField" name="password" required="yes" type="password" class="signup__body-password-input input">
+                                <button class="signup__body-password-input--show input-a" onclick="showpass(event)">
+                                   Show
+                                </button>
                             </div>
                             <span class="signup__body-password-text text-1">Password has to be at least 8 characters</span>
                         </div>
                         <div class="signup__body-confirm__pw">
                             <label for="confim_pass" class="signup__body-confirm__pw-text text--form">Confirm Password</label>
                             <div class="signup__body-confirm__pw-input input__show">
-                                <input id="confim_pass" name="cfpassword" required="yes" type="password" class="signup__body-confirm__pw-input input">
-                                <div class="signup__body-confirm__pw-input--show input-a">
-                                    <a href="" class="input__confirm__pw-show show">Show</a>
-                                </div>
+                                <input id="cfpasswordField" name="cfpassword" required="yes" type="password" class="signup__body-confirm__pw-input input">
+                                <button class="signup__body-confirm__pw-input--show input-a" onclick="showcfpass(event)">
+                                    Show
+                                </button>
                             </div>
                              <% if (request.getAttribute("error1") != null) { %>
                                         <p class="error-message" style="padding-bottom: 15px; color: red;font-size: 13px;"><%= request.getAttribute("error1") %></p>
@@ -1075,6 +1075,28 @@
         </div>
     </footer>
     <script src="./accest/js/main.js"></script>
+    <script>
+                    function showpass(event) {
+                        event.preventDefault();
+                    var passwordField = document.getElementById("passwordField");
+
+                    if (passwordField.type === "password") {
+                      passwordField.type = "text";
+                    } else {
+                      passwordField.type = "password";
+                    }
+                  }
+                      function showcfpass(event) {
+                        event.preventDefault();
+                    var cfpasswordField = document.getElementById("cfpasswordField");
+
+                    if (cfpasswordField.type === "password") {
+                      cfpasswordField.type = "text";
+                    } else {
+                      cfpasswordField.type = "password";
+                    }
+                  }
+	</script>
 </body>
 
 

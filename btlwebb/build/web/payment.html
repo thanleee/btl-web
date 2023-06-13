@@ -248,7 +248,7 @@
                         <li style="margin-top: 0px"> <a href="#" id="viewcart" ><span class="material-symbols-outlined">
                                     shopping_bag
                                 </span></a>
-                           <div class="containcart" id="containcart" style="margin-top: 105px;">
+                            <div class="containcart" id="containcart" style="margin-top: 105px;">
                                 <div class="container-cart">
                                     <div class="viewcart">
                                         <div class="header">
@@ -803,13 +803,13 @@
 
                             <h3 class="title">Product</h3><br>
                             <div id="cart-items" style="    border: 1px solid #ddd;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    padding-bottom: 0;
-    padding-right: 30px;">
+                                 width: 100%;
+                                 height: auto;
+                                 display: flex;
+                                 flex-direction: column;
+                                 padding: 10px;
+                                 padding-bottom: 0;
+                                 padding-right: 30px;">
 
                             </div><br>
                             <a style="font-size: 20px;font-weight: 600">Total: <span id="totalValue">$0.00</span></a><br>
@@ -830,7 +830,7 @@
                             </div>
                             <div class="inputBox">
                                 <span>address :</span>
-                                <input type="text" placeholder="Ha Noi" name="address" required>
+                                <input id="address" type="text" placeholder="Ha Noi" name="address" required>
                             </div>
                         </div>
 
@@ -867,6 +867,7 @@
                             </div>
                         </div>
                         <input type="text" name="total" style="display: none;">
+                        <input type="text" id="date" name="date" style="display: none;">
                         <input type="submit" value="proceed to checkout" class="submit-btn" style="    background: #2f2f2f;">
                         <div id="success-msg" class="hide">Đặt hàng thành công!</div>
                 </form>
@@ -1000,40 +1001,40 @@
         <script src="cart1.js"></script>
         <script src="main.js"></script>
         <script>
-             // Lấy vùng hiển thị thông tin giỏ hàng trong trang HTML đích
-             const cartItemsContainer = document.getElementById('cart-items');
+            // Lấy vùng hiển thị thông tin giỏ hàng trong trang HTML đích
+            const cartItemsContainer = document.getElementById('cart-items');
 
-     // Render lại các sản phẩm trong giỏ hàng
-             cartItems.forEach((product, index) => {
-                 const cartItemHTML = createCartItemHTML(product);
-                 cartItemsContainer.innerHTML += cartItemHTML;
-             });
+            // Render lại các sản phẩm trong giỏ hàng
+            cartItems.forEach((product, index) => {
+                const cartItemHTML = createCartItemHTML(product);
+                cartItemsContainer.innerHTML += cartItemHTML;
+            });
 
-             // Kiểm tra xem biến cartItems đã được khai báo và có giá trị hay chưa
-if (typeof cartItems !== 'undefined' && Array.isArray(cartItems)) {
-  // Lấy vùng hiển thị thông tin giỏ hàng trong trang HTML đích
-  const cartItemsContainer = document.getElementById('cart-items');
+            // Kiểm tra xem biến cartItems đã được khai báo và có giá trị hay chưa
+            if (typeof cartItems !== 'undefined' && Array.isArray(cartItems)) {
+                // Lấy vùng hiển thị thông tin giỏ hàng trong trang HTML đích
+                const cartItemsContainer = document.getElementById('cart-items');
 
-  // Xóa nội dung hiện tại của container trước khi thêm mới
-  cartItemsContainer.innerHTML = '';
+                // Xóa nội dung hiện tại của container trước khi thêm mới
+                cartItemsContainer.innerHTML = '';
 
-  // Render lại các sản phẩm trong giỏ hàng
-  cartItems.forEach((product) => {
-    const cartItemHTML = createCartItemHTML(product);
-    cartItemsContainer.innerHTML += cartItemHTML;
-  });
-}
+                // Render lại các sản phẩm trong giỏ hàng
+                cartItems.forEach((product) => {
+                    const cartItemHTML = createCartItemHTML(product);
+                    cartItemsContainer.innerHTML += cartItemHTML;
+                });
+            }
 
-function createCartItemHTML(product) {
-  const itemHTML = `
+            function createCartItemHTML(product) {
+                const itemHTML = `
     <a style="font-size: 16px; display:flex;justify-content: space-between;"><P>Name product: </p>${product.name}</a>
     <a style="font-size: 16px; display:flex;justify-content: space-between; margin-top: 10px;"><p>Price: </P>${product.price}</a>
     <a style="font-size: 16px; display:flex;justify-content: space-between; margin-top: 10px;"><p>Quantity: </P>${product.quantity}</a><br>
-    <input type="text" value="Name product: ${product.name}; Price: ${product.price}; Quantity ${product.quantity}" name="products" style="display: none;"> 
+    <input type="text" value="Name product: ${product.name};Price: ${product.price};Quantity: ${product.quantity}" name="products" style="display: none;"> 
   `;
-  
-  return itemHTML;
-}
+
+                return itemHTML;
+            }
 
 
 
@@ -1083,6 +1084,17 @@ function createCartItemHTML(product) {
 
             });
         </script>
+<!--        <script>
+
+            var address = document.getElementById("address");
+            var date = document.getElementById("date");
+
+            address.addEventListener("blur", function () {
+                var time = new Date().toLocaleString();
+                date.value = time;
+            });
+
+        </script>-->
     </body>
 
 </html>

@@ -33,20 +33,20 @@
         <input type="number" step="0.01" id="price" name="price" value="<%=product.getPrice()%>"><br><br>
         
         <label for="image">Image:</label>
+        <img src="img/<%=product.getImage() %>" width="90" height="80" />
         <input type="file" id="image" name="image" value="<%=product.getImage()%>"><br><br>
-        
-        
+               
         <label for="description">Description:</label>
         <input type="text" id="description" name="description" value="<%=product.getDescription()%>"><br><br>
-        
         
         <label for="color">Color:</label>
         <input type="text" id="color" name="color" value="<%=product.getColor()%>"><br><br>
 		
-		<label for="size">Size:</label>
+	<label for="size">Size:</label>
         <input type="text" id="size" name="size" value="<%=product.getSize()%>"><br><br>
         
         <label for="image2">Image2:</label>
+        <img src="img/<%=product.getImage2() %>" width="90" height="80" />
         <input type="file" id="image2" name="image2" value="<%=product.getImage2()%>"><br><br>
         
         <label for="cateid">CID:</label>

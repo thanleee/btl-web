@@ -94,9 +94,9 @@ public class UserDao extends DBContext{
         
 
 	public static void main(String[] args) {
-		User users = new User("14", "tie.com", "13", "123", "tien", "dona",0) ; 
-//		System.out.println(new UserDao().themTaiKhoan(users)) ; 
-//		System.out.println(new UserDao().kiemTraDangNhap("tie.com")) ; 
+		 UserDao userDao = new UserDao();
+    User user = userDao.layThongTinTaiKhoan("tle17112002@gmail.com");
+    System.out.println(user);
 	}
 
 }

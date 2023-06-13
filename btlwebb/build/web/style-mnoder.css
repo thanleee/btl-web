@@ -53,7 +53,9 @@ a.delete-button {
 a.edit-button {
   background-color: #28a745;
 }
-
+a.xoa-button{
+   background-color:#FFA500  
+}
 form {
   margin-top: 20px;
   background-color: #fff;

@@ -15,12 +15,13 @@ public class Payment {
     String name, email, phone,address;
     List<String> products; 
     String total;
+    String date;
     String status;
 
     public Payment() {
     }
 
-    public Payment(int id, String name, String email, String phone, String address, List<String> products, String total, String status) {
+    public Payment(int id, String name, String email, String phone, String address, List<String> products, String total, String date, String status) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -28,6 +29,7 @@ public class Payment {
         this.address = address;
         this.products = products;
         this.total = total;
+        this.date = date;
         this.status = status;
     }
 
@@ -87,6 +89,14 @@ public class Payment {
         this.total = total;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     public String getStatus() {
         return status;
     }
@@ -97,9 +107,10 @@ public class Payment {
 
     @Override
     public String toString() {
-        return "Payment{" + "id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", address=" + address + ", products=" + products + ", total=" + total + ", status=" + status + '}';
+        return "Payment{" + "id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", address=" + address + ", products=" + products + ", total=" + total + ", date=" + date + ", status=" + status + '}';
     }
 
+   
    
   
 }

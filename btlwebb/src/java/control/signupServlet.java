@@ -34,6 +34,8 @@ public class signupServlet extends HttpServlet {
 
         if (password.length() >= 8 && password.equals(cfpassword)) {
             UserDao userDao = new UserDao();
+            password = MaHoa.toSHA1(password) ; 
+            cfpassword = password ;
             if (userDao.checkEmailExists(email)) {
                 request.setAttribute("error2", "Loi dang ki: Email da ton tai");
                 RequestDispatcher rd = request.getRequestDispatcher("dangki.jsp");

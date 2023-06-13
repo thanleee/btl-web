@@ -43,17 +43,35 @@ public class EditProduct extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         double price = Double.parseDouble(request.getParameter("price"));
+        String image = request.getParameter("image");
         String description = request.getParameter("description");
         String color = request.getParameter("color");
         String size = request.getParameter("size");
+        String image2 = request.getParameter("image2");
         int cateid = Integer.parseInt(request.getParameter("cateid"));
 
         String realPath = request.getServletContext().getRealPath("/img");
-        String image = Paths.get(part.getSubmittedFileName()).getFileName().toString();
-        String image2 = Paths.get(part2.getSubmittedFileName()).getFileName().toString();
+        
+        if (image == null || image.trim().equals("")) { 
+            Product oldProduct = ProductDAO.getProductById(id); 
+            image = oldProduct.getImage(); 
+        }
+        
+        if (image2 == null || image2.trim().equals("")) { 
+            Product oldProduct = ProductDAO.getProductById(id);
+            image2 = oldProduct.getImage2();
+        }
+        
+        if (part != null && part.getSize() > 0) {
+            image = Paths.get(part.getSubmittedFileName()).getFileName().toString();
+            part.write(realPath+"/"+image);
+        }
 
-        part.write(realPath + "/" + image);
-        part2.write(realPath + "/" + image2);
+        if (part2 != null && part2.getSize() > 0) { 
+            image2 = Paths.get(part2.getSubmittedFileName()).getFileName().toString();
+            part2.write(realPath+"/"+image2);
+        }
+
 
         Product product = new Product();
 

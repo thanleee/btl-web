@@ -2,6 +2,7 @@ package control;
 
 import dal.DAO;
 import dal.DAOCategory;
+import dal.MaHoa;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -34,6 +35,7 @@ public class loginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        password = MaHoa.toSHA1(password) ;
         User u = new UserDao().layThongTinTaiKhoan(email);
         DAOCategory c = new DAOCategory();
         DAO p = new DAO();
@@ -50,9 +52,9 @@ public class loginServlet extends HttpServlet {
         int count = p.countAllProdunt();
         List<Category> listC = c.getAllCategory();
         List<Product> list = p.getTop8();
-
+        
         if (new UserDao().kiemTraDangNhap(email, password)) {
-
+            
             HttpSession session = request.getSession();
             session.setAttribute("fname", u);
             redirectToPage(request, response, "women");

@@ -34,7 +34,7 @@
 
         <header class="mt">
             <div class="row">
-                <div class="adv">
+                <div class="adv" style="    background: #ff7bbb;">
                     <div class="ani">
                         <div class="ani1">
                             <a href="https://us.boohoo.com/womens/promo/flash-sale-2?home_primarysplash_flash-sale-2">
@@ -206,34 +206,33 @@
                     </div>
                     <div class="user">
 
-                        <li> <a id="login-singup" class="fa-regular fa-user" href="#"></a>
+                         <li> <a id="login-singup" class="fa-regular fa-user" href="#"></a>
                             <c:if test = "${fname.fname == null}">
-                                <div id="containerlogin" class="containerlogin">
-
-
+                                <div id="containerlogin" class="containerlogin" style="margin-top: 119px;">
                                     <div class="container-log">
 
-                                        <form action="login" method="post">
-                                            <div class="content hop1">
-                                                <div class="header">
-                                                    <span class="text1">LOGIN</span>
-                                                    <a href="women"><button id="delete" onclick="slideOut2()">
-                                                            <div class="delete">X</div>
-                                                        </button>
-                                                    </a>
-                                                </div>
+
+                                        <div class="content hop1">
+                                            <div class="header">
+                                                <span class="text1">LOGIN</span>
+                                                <a href="women"><button id="delete" onclick="slideOut2()">
+                                                        <div class="delete">X</div>
+                                                    </button>
+                                                </a>
+                                            </div>
+                                            <form action="login" method="post">
                                                 <div class="body body-email">
                                                     <span class="text">Email</span>
 
-                                                    <input type="text" name="email" class="input input__email" placeholder="Nhập email của bạn">
+                                                    <input type="text" name="email" class="input input__email" >
                                                 </div>
                                                 <div class="body body-mk">
                                                     <span class="text">Password</span>
                                                     <div class="pw">
-                                                        <input type="password" name="password" class="input input__password" placeholder="Nhập mật khẩu của bạn">
-                                                        <div class="input__password-show">
-                                                            <a href="" class="input-show show">Show</a>
-                                                        </div>
+                                                        <input type="password" name="password" id="passwordField" class="input input__password" >
+                                                        <button class="input__password-show" onclick="showpass(event)">
+                                                            Show
+                                                        </button>
                                                     </div>
                                                     <% if (request.getAttribute("error") != null) { %>
                                                     <p class="error-message" style="padding-bottom: 15px; margin-top: -20px; color: red"><%= request.getAttribute("error") %></p>
@@ -251,24 +250,24 @@
                                                     <button type="submit" class=" click-login__login">LOG IN</button>
                                                     <a href="#" class="click-login__forget">Forgot Password?</a>
                                                 </div>
+                                            </form>
 
+                                        </div>
 
-                                        </form>
+                                        <div class="content hop2">
+                                            <a href="dangki.jsp">
+                                                <button class=" click-login__login">REGISTER</button></a>
+                                        </div>
+                                        <div class="img-log"
+                                             style="background-image: url(https://media.boohoo.com/i/boohooamplience/375x88_BANNER_NEWIN_2);">
+                                        </div>
                                     </div>
-                                    <div class="content hop2">
-
-                                        <button class=" click-login__login"><a href="dangki.jsp">REGISTER</a></button>
-                                    </div>
-                                    <div class="img-log"
-                                         style="background-image: url(https://media.boohoo.com/i/boohooamplience/375x88_BANNER_NEWIN_2);">
-                                    </div>
-                                </div>
-                        </div></c:if>
-                        </li>
+                                </div></c:if>
+                            </li>
                     <c:if test="${fname.fname != null}">        
                         <li style=" border-right:1px solid #ddd; margin-top: 0px; margin-left: -5px; padding-right: 20px">
 
-                            <a style="font-size:1.5rem" href="#"> 
+                            <a style="font-size:1.5rem" href="change"> 
 
                                 ${fname.fname}
 
@@ -279,43 +278,55 @@
                         <li style="margin-top: 5px;"> <a href="#"><span class="material-symbols-outlined" >
                                     favorite
                                 </span></a></li>
-                        <li style=" margin-top:5px"> <a href="#" id="viewcart"><span class="material-symbols-outlined">
+                        <li style=" margin-top:4px"> <a href="#" id="viewcart"><span class="material-symbols-outlined">
                                     shopping_bag
                                 </span></a>
-                            <div class="containcart" id="containcart" style="margin-top: 119px;">
-                                <div class="container-cart">
-                                    <div class="viewcart">
-                                        <div class="header">
-                                            <div class="header__text">YOUR CART</div>
-                                            <div class="header__delete"><button onclick="slideOut3()">X</button></div>
-                                        </div>
-                                        <div id="cart" style="max-height: 320px; overflow-y: auto;">
+                            <c:if test="${fname.fname != null}">
+                                <div class="containcart" id="containcart" style="margin-top: 119px;">
+                                    <div class="container-cart">
+                                        <div class="viewcart">
+                                            <div class="header">
+                                                <div class="header__text">YOUR CART</div>
+                                                <div class="header__delete"><button onclick="slideOut3()">X</button></div>
+                                            </div>
+                                            <div id="cart" style="max-height: 320px; overflow-y: auto;">
 
-                                        </div>
+                                            </div>
 
-                                        <p>Total: <span id="total">$0.00</span></p>
-                                        <div class="viewcart__sale">
-                                            <span class="viewcart__text">*Plus applicable taxes</span>
-                                            <div class="btn__viewcart flex ">
-                                                <div class="btn__1">
-                                                    <button class="btn btn--1">VIEW CART</button>
-                                                </div>
-                                                <div class="btn__2">
-                                                    <button class="btn btn--2" onclick="checkout()">CHECKOUT</button>
+                                            <p>Total: <span id="total">$0.00</span></p>
+                                            <div class="viewcart__sale">
+                                                <span class="viewcart__text">*Plus applicable taxes</span>
+                                                <div class="btn__viewcart flex ">
+                                                    <div class="btn__1">
+                                                        <button class="btn btn--1">VIEW CART</button>
+                                                    </div>
+                                                    <div class="btn__2">
+                                                        <button class="btn btn--2" onclick="checkout()">CHECKOUT</button>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <div class="vc__img"
-                                             style="background-image: url(https://media.boohoo.com/i/boohooamplience/minicart-banner-bottom-nh?qlt=default&fmt=auto);">
-                                        </div>
+                                            <div class="vc__img"
+                                                 style="background-image: url(https://media.boohoo.com/i/boohooamplience/minicart-banner-bottom-nh?qlt=default&fmt=auto);">
+                                            </div>
 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </c:if>
+                            <script>
+                                document.getElementById('viewcart').addEventListener('click', function (event) {
+                                    event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+
+                                    // Kiểm tra nếu fname.fname là null
+                                    if (${fname.fname == null}) {
+                                        alert("Vui lòng đăng nhập để xem giỏ hàng.");
+                                    }
+                                });
+                            </script>
                         </li>
 
-                        <li> <a href="dangxuat" style=" margin-top:5px">
+                        <li> <a href="dangxuat" style=" margin-top:9px">
                             <c:if test="${fname.fname != null}">
                                 <span class="material-symbols-outlined">
                                     logout
@@ -410,7 +421,7 @@
                      padding-top: 10px;
                      margin-top: 0;">
 
-                    <div class="product-content-right-home">
+<!--                    <div class="product-content-right-home">
                         <ul>
                             <li>HOME</li>
                             <li>/</li>
@@ -423,7 +434,7 @@
                             <li>MEN'S OVERSIZED T-SHIRTS</li>
 
                         </ul>
-                    </div>
+                    </div>-->
                 <div class=" product-content-right-img" style="display: none;">
 
                         <img src="img1/${p.image}" width="50px" height="50px">
@@ -765,6 +776,18 @@
     window.location.href = "payment.html?total=" + total;
 }
     </script>
+    <script>
+                    function showpass(event) {
+                        event.preventDefault();
+                    var passwordField = document.getElementById("passwordField");
+
+                    if (passwordField.type === "password") {
+                      passwordField.type = "text";
+                    } else {
+                      passwordField.type = "password";
+                    }
+                  }
+	</script>
     <script src="main.js"></script>
     <script src="cart.js"></script>
 </body>

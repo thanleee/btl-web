@@ -86,6 +86,7 @@ public class CategoryControll extends HttpServlet {
         request.setAttribute("listcolor", listcolor);
         request.setAttribute("colo", colo);
         request.getRequestDispatcher("women1.jsp").forward(request, response);
+       
                
     } 
 
